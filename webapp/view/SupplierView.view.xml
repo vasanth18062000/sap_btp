@@ -1,0 +1,71 @@
+<mvc:View controllerName="ns.proposalnew.controller.SupplierView"
+    xmlns="sap.m"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true">
+    <Page id="page">
+        <Bar>
+            <contentLeft>
+                <Title text="Supplier Details" level="H1" titleStyle="H3" />
+            </contentLeft>
+        </Bar>
+        <List >
+            <ObjectListItem>
+                <attributes>
+                    <ObjectAttribute class="bigFont" title="Supplier ID" id="ID" text="{id}" />
+
+                    <ObjectAttribute class="bigFont" title="Name of the Supplier" text="{name}" />
+
+                    <ObjectAttribute class="bigFont" title="Supplier Website" text="{website}" />
+
+                </attributes>
+            </ObjectListItem>
+        </List>
+
+
+        <Bar class="space1">
+            <contentLeft>
+                <Title text="Supplier Contact Details" level="H1" titleStyle="H3" />
+            </contentLeft>
+        </Bar>
+        <List items="{path: 'PS_VENDOR_ORG_CONTACT'}">
+            <ObjectListItem>
+                <attributes>
+                    <!-- <ObjectAttribute class="bigFont" title="Address ID" text="{id}" /> -->
+
+                    <ObjectAttribute class="bigFont" title="Address Line1" text="{path: 'ven>/addressLine1'}" />
+
+                    <ObjectAttribute class="bigFont" title="Address Line2" text="{path: 'ven>/addressLine2'}" />
+
+                    <ObjectAttribute class="bigFont" title="Address Line3" text="{path: 'ven>/addressLine3'}" />
+
+                    <ObjectAttribute class="bigFont" title="City" text="{path: 'ven>/city'}" />
+
+                    <ObjectAttribute class="bigFont" title="Pincode" text="{path: 'ven>/pincode'}" />
+
+                    <ObjectAttribute class="bigFont" title="State" text="{path: 'ven>/state'}" />
+
+                    <ObjectAttribute class="bigFont" title="Country" text="{path: 'ven>/country'}" />
+
+                    <ObjectAttribute class="bigFont" title="Person1 Mobile Number" text="{path: 'ven>/contact_person_1_mobileNumber'}" />
+
+                    <ObjectAttribute class="bigFont" title="Person1 Email Id" text="{path: 'ven>/contact_person_1_emailId'}" />
+
+                    <ObjectAttribute class="bigFont" title="Person2 Mobile Number" text="{path: 'ven>/contact_person_2_mobileNumber'}" />
+
+                    <ObjectAttribute class="bigFont" title="Person2 Email Id" text="{path: 'ven>/contact_person_2_emailId'}" />
+
+                </attributes>
+            </ObjectListItem>
+        </List>
+
+
+        <footer>
+            <Bar >
+                <contentRight>
+                    <Button text="Edit" press="onBack" icon="sap-icon://nav-back" type="Emphasized"></Button>
+                    <Button text="Go to home" press="onSaveandContinue" type="Success" icon="sap-icon://accept" />
+                </contentRight>
+            </Bar>
+        </footer>
+
+    </Page>
+</mvc:View>

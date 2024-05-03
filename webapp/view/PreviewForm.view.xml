@@ -1,0 +1,104 @@
+<mvc:View
+    controllerName="ns.proposalnew.controller.PreviewForm"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+>
+    <Page>
+        <Bar>
+            <contentMiddle>
+                <Title
+                    text="MainSection Details"
+                    level="H1"
+                    titleStyle="H3"
+                />
+            </contentMiddle>
+        </Bar>
+
+        <VBox>
+            <Panel headerText="Main Section Title">
+                <ObjectAttribute
+                    class="bigFont"
+                    text="{mainSectiontitle}"
+                />
+            </Panel>
+            <Panel headerText="Text Area">
+                <core:HTML
+                    class="htmledit"
+                    content="{main>/key3}"
+                />
+            </Panel>
+        </VBox>
+
+        <Bar>
+            <contentLeft>
+                <Title
+                    text="Image Preview :"
+                    level="H3"
+                />
+            </contentLeft>
+        </Bar>
+
+        <FlexBox
+            class="image"
+            justifyContent="Center"
+            alignItems="Center"
+        >
+            <VBox id="previewImageContainer" />
+        </FlexBox>
+
+        <Bar>
+            <contentMiddle>
+                <Title
+                    text="SubSection Details"
+                    level="H1"
+                    titleStyle="H3"
+                />
+            </contentMiddle>
+        </Bar>
+
+        <VBox>
+            <Panel headerText="Sub Section Title">
+            <List >
+            <ObjectListItem >
+                <ObjectAttribute
+                    class="bigFont"
+                    text="{sub>/subSectiontitle}"
+                /> 
+                </ObjectListItem>
+                </List>
+            </Panel>
+            <Panel headerText="Sub Text Area">
+                <core:HTML
+                    class="htmledit"
+                    content="{sub>/decodedtextkey3}"
+                />
+            </Panel>
+
+            <Panel headerText="Image">
+                <core:HTML
+                    class="htmledit"
+                    content="{sub>/imagearea}"
+                />
+            </Panel>
+
+        </VBox>
+
+         <Bar>
+            <contentLeft>
+                <Title
+                    text="Image Preview :"
+                    level="H3"
+                />
+            </contentLeft>
+        </Bar>
+
+        <FlexBox
+            class="image"
+            justifyContent="Center"
+            alignItems="Center"
+        >
+            <VBox id="previewsubImageContainer" />
+        </FlexBox>
+    </Page>
+</mvc:View>

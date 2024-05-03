@@ -1,0 +1,147 @@
+<mvc:View xmlns:unified="sap.ui.unified"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:core="sap.ui.core"
+    xmlns="sap.m"
+    xmlns:l="sap.ui.layout"
+    xmlns:u="sap.ui.unified"
+    xmlns:f="sap.ui.layout.form" controllerName="ns.proposalnew.controller.ClientForm">
+    <Page id="_IDGenPage1">
+        <customHeader>
+            <OverflowToolbar id="_IDGenOverflowToolbar1">
+                <Bar id="_IDGenBar1">
+                    <contentLeft>
+                        <Image id="_IDGenImage1" src="{i18n>headerImage1}" width="100%" height="400%" />
+                    </contentLeft>
+
+                    <contentMiddle>
+                        <Text id="_IDGenText1" text="{i18n>headerTitle1}" />
+                    </contentMiddle>
+                </Bar>
+            </OverflowToolbar>
+        </customHeader>
+        <content>
+            <IconTabBar class="sapUiSmallMarginBottom sapUiResponsiveContentPadding" id="iconTabBar">
+                <items>
+                    <IconTabFilter id="_IDGenIconTabFilter1" text="Customer Detail" class="sapUiSmallMarginBottom sapUiResponsiveContentPadding" iconColor="NonInteractive" key="contactTab3">
+                        <!-- Client Details Form -->
+                        <f:SimpleForm id="clientForm" title="Customer Details" layout="ResponsiveGridLayout" labelSpanXL="3" labelSpanL="3" labelSpanM="3" labelSpanS="12" adjustLabelSpan="false">
+                            <f:content>
+                                <VBox id="_IDGenVBox1">
+                                    <!-- <Label id="_IDGenLabel1" text="Customer ID" />
+                                    <Input editable="true" width="18%" id="id" value="{id}" /> -->
+                                    <Label id="_IDGenLabel2" text="Name of the Customer" />
+                                    <Input width="18%" id="name" value="{name}" />
+                                    <!-- <Label id="_IDGenLabel3" text="Logo" />
+                                <Input width="18%" id="logo" value="{logo}"/> -->
+                                    <Label id="_IDGenLabel4" text="Customer Website" />
+                                    <Input width="18%" id="website" value="{website}" />
+                                    <Label id="_IDGenLabel3" text="Logo"/>
+                                     <u:FileUploader
+                                        id="idDP" 
+                                    maximumFilenameLength="30" maximumFileSize="1" multiple="false"
+                                    sameFilenameAllowed="false"  change="onChangeDP"  fileType="png,jpg,jpeg"
+                                    filenameLengthExceed="onFilenameLengthExceed" fileSizeExceed="on2MBFileSizeExceed" typeMissmatch="onTypeMissmatch"
+                                    uploadComplete="onUploadDPComplete" visible="true" 
+                                        />
+                                         <TextArea id="idBase64Area"  editable="true" height="300px" width="500px" visible="false" />
+                                         <Text id="image" class="sapUiSmallMarginBottom size" text="(size upto 2mb)"></Text>
+                                        
+                                         <Image id="imagePreview" width="10%"/>
+
+                                </VBox>
+                            </f:content>
+                        </f:SimpleForm>
+                        <Bar id="_IDGenBar3">
+                            <contentRight>
+                                <!-- Next Button to move to the Contact Detail tab -->
+                                <Button id="_IDGenButton3" text="Next" press="onNextClientDetails" type="Emphasized" icon="sap-icon://arrow-right" />
+                            </contentRight>
+                        </Bar>
+                    </IconTabFilter>
+
+                    <IconTabFilter id="_IDGenIconTabFilter2" text="Customer Contact Detail" class="sapUiSmallMarginBottom sapUiResponsiveContentPadding" iconColor="NonInteractive" key="contactTab">
+                        <!-- Contact Details Form -->
+                        <f:SimpleForm id="contactForm" title="Customer Contact Details" layout="ResponsiveGridLayout" labelSpanXL="3" labelSpanL="3" labelSpanM="3" labelSpanS="12" adjustLabelSpan="false">
+                            <f:content>
+                                <VBox id="_IDGenVBox2">
+                                    <!-- <Label id="_IDGenLabel5" text="Address ID" />
+                                    <Input width="18%" id="ID" value="{proposalOwnerContact>id}" /> -->
+                                    <Label id="_IDGenLabel6" text="Address Line1" />
+                                    <Input width="35%" id="addressLine1" value="{proposalOwnerContact>addressLine1}" />
+                                    <Label id="_IDGenLabel7" text="Address Line2" />
+                                    <Input width="35%" id="addressLine2" value="{proposalOwnerContact>addressLine2}" />
+                                    <Label id="_IDGenLabel8" text="Address Line3" />
+                                    <Input width="35%" id="addressLine3" value="{proposalOwnerContact>addressLine3}" />
+                                    <Label id="_IDGenLabel9" text="City" />
+                                    <Input width="35%" id="city" value="{proposalOwnerContact>city}" />
+                                </VBox>
+                                <VBox id="_IDGenVBox3">
+                                    <Label id="_IDGenLabel10" text="Pincode" />
+                                    <Input width="35%" change="onPincodeChange" id="pincode" value="{proposalOwnerContact>pincode}" />
+                                    <Label id="_IDGenLabel11" text="State" />
+                                    <Input width="35%" id="state" value="{proposalOwnerContact>state}" />
+                                    <Label id="_IDGenLabel12" text="Country" />
+                                    <Input width="35%" id="country" value="{proposalOwnerContact>country}" />
+                                </VBox>
+                            </f:content>
+                        </f:SimpleForm>
+                        <Bar id="_IDGenBar2">
+                            <contentRight>
+                            <Button id="_IDGenButton6" text="Back" press="onbackClientDetails" type="Emphasized" icon="sap-icon://nav-back"/>
+                                <Button id="_IDGenButton4" text="Next" press="onNextContact1Details" type="Emphasized" icon="sap-icon://arrow-right" />
+                            </contentRight>
+                        </Bar>
+                    </IconTabFilter>
+
+                    <IconTabFilter id="_IDGenIconTabFilter3" text="Customer Contact Detail (1)" class="sapUiSmallMarginBottom sapUiResponsiveContentPadding" iconColor="NonInteractive" key="contactTab1">
+                        <!-- Contact Details Form -->
+                        <f:SimpleForm id="contact1Form" title="Customer Contact Details" layout="ResponsiveGridLayout" labelSpanXL="3" labelSpanL="3" labelSpanM="3" labelSpanS="12" adjustLabelSpan="false">
+                            <f:content>
+                                <VBox id="_IDGenVBox4">
+                                    <Label id="_IDGenLabel13" text="Mobile Number" />
+                                    <Input width="18%" id="contact_person_1_mobileNumber" change="onMobileNumberChange" value="{proposalOwnerContact>contact_person_1_mobileNumber}" />
+                                    <!-- <Label id="_IDGenLabel14" text="Person1 TelePhoneNumber" />
+                                    <Input width="18%" id="contact_person_1_telephoneNumber" value="{proposalOwnerContact>contact_person_1_telephoneNumber}" /> -->
+                                    <Label id="_IDGenLabel15" text="Email ID" />
+                                    <Input width="18%" id="contact_person_1_emailId"  change="onEmailChange" value="{proposalOwnerContact>contact_person_1_emailId}" />
+                                </VBox>
+                            </f:content>
+                        </f:SimpleForm>
+                        <Bar id="_IDGenBar4">
+                            <contentRight>
+                            <Button id="_IDGenButton7" text="Back" press="onbackClient1Details" type="Emphasized" icon="sap-icon://nav-back"/>
+                                <Button id="_IDGenButton5" text="Next" press="onNextContact2Details" type="Emphasized" icon="sap-icon://arrow-right" />
+                            </contentRight>
+                        </Bar>
+                    </IconTabFilter>
+
+                    <IconTabFilter id="_IDGenIconTabFilter4" text="Customer Contact Detail (2)" class="sapUiSmallMarginBottom sapUiResponsiveContentPadding" iconColor="NonInteractive" key="contactTab2">
+                        <!-- Contact Details Form -->
+                        <f:SimpleForm id="contact2Form" title="Customer Contact Details" layout="ResponsiveGridLayout" labelSpanXL="3" labelSpanL="3" labelSpanM="3" labelSpanS="12" adjustLabelSpan="false">
+                            <f:content>
+                                <VBox id="_IDGenVBox5">
+                                    <Label id="_IDGenLabel16" text="Mobile Number" />
+                                    <Input width="18%" id="contact_person_2_mobileNumber" change="onMobileNumberChange" value="{proposalOwnerContact>contact_person_2_mobileNumber}" />
+                                    <!-- <Label id="_IDGenLabel17" text="Person2 TelePhoneNumber" />
+                                    <Input width="18%" id="contact_person_2_telephoneNumber" value="{proposalOwnerContact>contact_person_2_telephoneNumber}" /> -->
+                                    <Label id="_IDGenLabel18" text="Email ID" />
+                                    <Input width="18%" id="contact_person_2_emailId" change="onEmailChange" value="{proposalOwnerContact>contact_person_2_emailId}" />
+                                    <!-- <Label id="_IDGenLabel19" text="Proposal Client ID" />
+                                    <Input width="18%" id="proposalOwner" value="{proposalOwnerContact>proposalOwner}" /> -->
+
+                                </VBox>
+                            </f:content>
+                        </f:SimpleForm>
+                        <Bar id="_IDGenBar5">
+                            <contentRight>
+                                <Button id="_IDGenButton8" text="Back" press="onbackClient2Details" type="Emphasized" icon="sap-icon://nav-back"/>
+                                <Button id="_IDGenButton1" text="Save" press="onSave" type="Success" icon="sap-icon://accept" />
+                                <Button id="_IDGenButton2" text="Preview" visible="false" press="onView" type="Emphasized" icon="sap-icon://biometric-face" />
+                            </contentRight>
+                        </Bar>
+                    </IconTabFilter>
+                </items>
+            </IconTabBar>
+        </content>
+    </Page>
+</mvc:View>

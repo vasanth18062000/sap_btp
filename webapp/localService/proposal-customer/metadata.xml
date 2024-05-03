@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData">
+    <edmx:Reference Uri="https://sap.github.io/odata-vocabularies/vocabularies/Common.xml" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Alias="Common" Namespace="com.sap.vocabularies.Common.v1"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://oasis-tcs.github.io/odata-vocabularies/vocabularies/Org.OData.Core.V1.xml" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Alias="Core" Namespace="Org.OData.Core.V1"/>
+    </edmx:Reference>
+    <edmx:DataServices m:DataServiceVersion="2.0">
+        <Schema Namespace="ProposalCustomer.service.ProposalCustomer" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+            <EntityContainer Name="EntityContainer" m:IsDefaultEntityContainer="true">
+                <EntitySet Name="ProposalCustomer" EntityType="ProposalCustomer.service.ProposalCustomer.ProposalCustomer"/>
+                <EntitySet Name="ProposalCustomerContact" EntityType="ProposalCustomer.service.ProposalCustomer.ProposalCustomerContact"/>
+                <AssociationSet Name="ProposalCustomerContact_PS_CUSTOMER_ORG" Association="ProposalCustomer.service.ProposalCustomer.ProposalCustomerContact_PS_CUSTOMER_ORG">
+                    <End Role="ProposalCustomerContact" EntitySet="ProposalCustomerContact"/>
+                    <End Role="ProposalCustomer" EntitySet="ProposalCustomer"/>
+                </AssociationSet>
+            </EntityContainer>
+            <EntityType Name="ProposalCustomer">
+                <Key>
+                    <PropertyRef Name="id"/>
+                </Key>
+                <Property Name="id" Type="Edm.Int32" Nullable="false"/>
+                <Property Name="name" Type="Edm.String" MaxLength="100"/>
+                <Property Name="logo" Type="Edm.Binary"/>
+                <Property Name="website" Type="Edm.String"/>
+                <Property Name="createdBy" Type="Edm.String" MaxLength="50"/>
+                <Property Name="createdAt" Type="Edm.DateTimeOffset" Precision="7"/>
+                <Property Name="modifiedBy" Type="Edm.String" MaxLength="50"/>
+                <Property Name="modifiedAt" Type="Edm.DateTimeOffset" Precision="7"/>
+                <NavigationProperty Name="PS_CUSTOMER_ORG_CONTACT" Relationship="ProposalCustomer.service.ProposalCustomer.ProposalCustomerContact_PS_CUSTOMER_ORG" FromRole="ProposalCustomer" ToRole="ProposalCustomerContact"/>
+            </EntityType>
+            <EntityType Name="ProposalCustomerContact">
+                <Key>
+                    <PropertyRef Name="id"/>
+                </Key>
+                <Property Name="id" Type="Edm.Int32" Nullable="false"/>
+                <Property Name="addressLine1" Type="Edm.String" MaxLength="30"/>
+                <Property Name="addressLine2" Type="Edm.String" MaxLength="50"/>
+                <Property Name="addressLine3" Type="Edm.String" MaxLength="50"/>
+                <Property Name="city" Type="Edm.String" MaxLength="50"/>
+                <Property Name="pincode" Type="Edm.String" MaxLength="50"/>
+                <Property Name="state" Type="Edm.String" MaxLength="50"/>
+                <Property Name="country" Type="Edm.String" MaxLength="50"/>
+                <Property Name="contact_person_1_mobileNumber" Type="Edm.String" MaxLength="50"/>
+                <Property Name="contact_person_1_telephoneNumber" Type="Edm.String" MaxLength="50"/>
+                <Property Name="contact_person_1_emailId" Type="Edm.String" MaxLength="50"/>
+                <Property Name="contact_person_2_mobileNumber" Type="Edm.String" MaxLength="50"/>
+                <Property Name="contact_person_2_telephoneNumber" Type="Edm.String" MaxLength="50"/>
+                <Property Name="contact_person_2_emailId" Type="Edm.String" MaxLength="50"/>
+                <Property Name="createdBy" Type="Edm.String" MaxLength="50"/>
+                <Property Name="createdAt" Type="Edm.DateTimeOffset" Precision="7"/>
+                <Property Name="modifiedBy" Type="Edm.String" MaxLength="50"/>
+                <Property Name="modifiedAt" Type="Edm.DateTimeOffset" Precision="7"/>
+                <NavigationProperty Name="PS_CUSTOMER_ORG" Relationship="ProposalCustomer.service.ProposalCustomer.ProposalCustomerContact_PS_CUSTOMER_ORG" FromRole="ProposalCustomerContact" ToRole="ProposalCustomer"/>
+                <Property Name="PS_CUSTOMER_ORG_id" Type="Edm.Int32"/>
+            </EntityType>
+            <Association Name="ProposalCustomerContact_PS_CUSTOMER_ORG">
+                <End Role="ProposalCustomerContact" Type="ProposalCustomer.service.ProposalCustomer.ProposalCustomerContact" Multiplicity="*"/>
+                <End Role="ProposalCustomer" Type="ProposalCustomer.service.ProposalCustomer.ProposalCustomer" Multiplicity="0..1"/>
+                <ReferentialConstraint>
+                    <Principal Role="ProposalCustomer">
+                        <PropertyRef Name="id"/>
+                    </Principal>
+                    <Dependent Role="ProposalCustomerContact">
+                        <PropertyRef Name="PS_CUSTOMER_ORG_id"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>

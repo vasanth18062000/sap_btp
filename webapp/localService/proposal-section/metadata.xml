@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData">
+    <edmx:Reference Uri="https://sap.github.io/odata-vocabularies/vocabularies/Common.xml" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Alias="Common" Namespace="com.sap.vocabularies.Common.v1"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://oasis-tcs.github.io/odata-vocabularies/vocabularies/Org.OData.Core.V1.xml" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Alias="Core" Namespace="Org.OData.Core.V1"/>
+    </edmx:Reference>
+    <edmx:DataServices m:DataServiceVersion="2.0">
+        <Schema Namespace="ProposalSection.service.ProposalSection" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+            <EntityContainer Name="EntityContainer" m:IsDefaultEntityContainer="true">
+                <EntitySet Name="ProposalMainSection" EntityType="ProposalSection.service.ProposalSection.ProposalMainSection"/>
+                <EntitySet Name="ProposalSubSection" EntityType="ProposalSection.service.ProposalSection.ProposalSubSection"/>
+                <AssociationSet Name="ProposalSubSection_PS_MAIN_SECTION" Association="ProposalSection.service.ProposalSection.ProposalSubSection_PS_MAIN_SECTION">
+                    <End Role="ProposalSubSection" EntitySet="ProposalSubSection"/>
+                    <End Role="ProposalMainSection" EntitySet="ProposalMainSection"/>
+                </AssociationSet>
+            </EntityContainer>
+            <EntityType Name="ProposalMainSection">
+                <Key>
+                    <PropertyRef Name="id"/>
+                </Key>
+                <Property Name="id" Type="Edm.Int32" Nullable="false"/>
+                <Property Name="title" Type="Edm.String"/>
+                <Property Name="description" Type="Edm.String"/>
+                <Property Name="section_image" Type="Edm.Binary"/>
+                <Property Name="table_data" Type="Edm.Binary"/>
+                <Property Name="tableArea" Type="Edm.Binary"/>
+                <Property Name="createdBy" Type="Edm.String" MaxLength="50"/>
+                <Property Name="createdAt" Type="Edm.DateTimeOffset" Precision="7"/>
+                <Property Name="modifiedBy" Type="Edm.String" MaxLength="50"/>
+                <Property Name="modifiedAt" Type="Edm.DateTimeOffset" Precision="7"/>
+                <Property Name="PS_DETAILS_id" Type="Edm.Int32"/>
+                <Property Name="section_table" Type="Edm.Binary"/>
+                <NavigationProperty Name="PS_SUB_SECTION" Relationship="ProposalSection.service.ProposalSection.ProposalSubSection_PS_MAIN_SECTION" FromRole="ProposalMainSection" ToRole="ProposalSubSection"/>
+            </EntityType>
+            <EntityType Name="ProposalSubSection">
+                <Key>
+                    <PropertyRef Name="id"/>
+                </Key>
+                <Property Name="id" Type="Edm.Int32" Nullable="false"/>
+                <Property Name="sub_title" Type="Edm.String"/>
+                <Property Name="sub_description" Type="Edm.String"/>
+                <Property Name="sub_section_image" Type="Edm.Binary"/>
+                <Property Name="sub_table_data" Type="Edm.Binary"/>
+                <Property Name="createdBy" Type="Edm.String" MaxLength="50"/>
+                <Property Name="createdAt" Type="Edm.DateTimeOffset" Precision="7"/>
+                <Property Name="modifiedBy" Type="Edm.String" MaxLength="50"/>
+                <Property Name="modifiedAt" Type="Edm.DateTimeOffset" Precision="7"/>
+                <Property Name="sub_section_table" Type="Edm.Binary"/>
+                <NavigationProperty Name="PS_MAIN_SECTION" Relationship="ProposalSection.service.ProposalSection.ProposalSubSection_PS_MAIN_SECTION" FromRole="ProposalSubSection" ToRole="ProposalMainSection"/>
+                <Property Name="PS_MAIN_SECTION_id" Type="Edm.Int32"/>
+            </EntityType>
+            <Association Name="ProposalSubSection_PS_MAIN_SECTION">
+                <End Role="ProposalSubSection" Type="ProposalSection.service.ProposalSection.ProposalSubSection" Multiplicity="*"/>
+                <End Role="ProposalMainSection" Type="ProposalSection.service.ProposalSection.ProposalMainSection" Multiplicity="0..1"/>
+                <ReferentialConstraint>
+                    <Principal Role="ProposalMainSection">
+                        <PropertyRef Name="id"/>
+                    </Principal>
+                    <Dependent Role="ProposalSubSection">
+                        <PropertyRef Name="PS_MAIN_SECTION_id"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>

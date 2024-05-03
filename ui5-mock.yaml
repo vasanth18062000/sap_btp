@@ -1,0 +1,57 @@
+specVersion: "3.1"
+metadata:
+  name: ns.proposalnew
+type: application
+server:
+  customMiddleware:
+    - name: fiori-tools-proxy
+      afterMiddleware: compression
+      configuration:
+        ignoreCertError: false
+        ui5:
+          path:
+            - /resources
+            - /test-resources
+          url: https://ui5.sap.com
+        backend:
+          - path: /v2
+            url: https://aa7efdc3trial-dev-proposal-srv.cfapps.us10-001.hana.ondemand.com
+          - path: /v2
+            url: https://aa7efdc3trial-dev-proposal-srv.cfapps.us10-001.hana.ondemand.com
+          - path: /v2/odata/v4/proposal-section/
+            url: https://aa7efdc3trial-dev-proposal-srv.cfapps.us10-001.hana.ondemand.com
+          - path: /v2/odata/v4/proposal-supplier/
+            url: https://aa7efdc3trial-dev-proposal-srv.cfapps.us10-001.hana.ondemand.com
+    - name: fiori-tools-appreload
+      afterMiddleware: compression
+      configuration:
+        port: 35729
+        path: webapp
+        delay: 300
+    - name: sap-fe-mockserver
+      beforeMiddleware: csp
+      configuration:
+        mountPath: /
+        services:
+          - urlPath: /v2/odata/v4/proposal
+            metadataPath: ./webapp/localService/metadata.xml
+            mockdataPath: ./webapp/localService/data
+            generateMockData: true
+        annotations: []
+        service:
+          - urlPath: /v2/odata/v4/proposal
+            generateMockData: true
+            metadataXmlPath: ./webapp/localService/mainService/metadata.xml
+            mockdataRootPath: ./webapp/localService/data
+          - urlPath: /v2/odata/v4/proposal-customer/
+            metadataXmlPath: ./webapp/localService/proposal-customer/metadata.xml
+            mockdataRootPath: ./webapp/localService/proposal-customer/mockdata
+            generateMockData: true
+          - urlPath: /v2/odata/v4/proposal-section/
+            metadataXmlPath: ./webapp/localService/proposal-section/metadata.xml
+            mockdataRootPath: ./webapp/localService/proposal-section/mockdata
+            generateMockData: true
+          - urlPath: /v2/odata/v4/proposal-supplier/
+            metadataXmlPath: ./webapp/localService/proposal-supplier/metadata.xml
+            mockdataRootPath: ./webapp/localService/proposal-supplier/mockdata
+            generateMockData: true

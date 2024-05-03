@@ -1,0 +1,96 @@
+<mvc:View
+    xmlns:layout="sap.ui.layout"
+    controllerName="ns.proposalnew.controller.Main"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns="sap.m"
+>
+        <Page
+            id="page"
+            title="{i18n>title}"
+        >
+            <customHeader>
+                <OverflowToolbar id="_IDGenOverflowToolbar1">
+                    <Bar id="_IDGenBar1">
+   <contentLeft>
+                        <Image id="_IDGenImage1" src="{i18n>headerImage1}" width="100%" height="400%" />
+                    </contentLeft>
+                        <contentMiddle>
+                            <Text id="_IDGenText1" text="{i18n>applicationTitle}" />
+                        </contentMiddle>
+                    </Bar>
+                </OverflowToolbar>
+            </customHeader>
+            <content>
+                <Bar id="_IDGenBar2" class="mainpageBar" />
+   <GenericTile id="_IDGenGenericTile1"
+                    class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout "
+                        header="Supplier Creation"
+                        width="15%"
+                        press=".onNavVendor"
+                        
+                    >
+                        <tileContent>
+                            <TileContent id="_IDGenTileContent1">
+                                <Text id="_IDGenText2" text="Create Supplier" />
+                            </TileContent>
+                        </tileContent>
+                    </GenericTile>
+                 <GenericTile id="_IDGenGenericTile2"
+                    class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout "
+                        header="Customer Creation"
+                        width="15%"
+                        press=".onNavClient"
+                    
+                    >
+                        <tileContent>
+                            <TileContent id="_IDGenTileContent2">
+                                <Text id="_IDGenText3" text="Create Customer" />
+                            </TileContent>
+                        </tileContent>
+                    </GenericTile>
+
+                     <GenericTile id="_IDGenGenericTile4"
+                    class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout "
+                        header="Supplier View"
+                        width="15%"
+                        press=".onNavSupplierViewEdit"
+                    
+                    >
+                        <tileContent>
+                            <TileContent id="_IDGenTileContent4">
+                                <Text id="_IDGenText4" text="View And Updation" />
+                            </TileContent>
+                        </tileContent>
+                    </GenericTile>
+                   <GenericTile id="_IDGenGenericTile5"
+                    class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout "
+                        header="Customer View"
+                        width="15%"
+                        press=".onNavClientViewEdit"
+                    
+                    >
+                        <tileContent>
+                            <TileContent id="_IDGenTileContent5">
+                                <Text id="_IDGenText5" text="View And Updation" />
+                            </TileContent>
+                        </tileContent>
+                    </GenericTile>
+
+                                       <GenericTile id="_IDGenGenericTile3"
+                    class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout "
+                        header="Template Creation"
+                        width="15%"
+                        press=".onNavTemplate"
+                    
+                    >
+                        <tileContent>
+                            <TileContent id="_IDGenTileContent6">
+                                <Text id="_IDGenText6" text="Template" />
+                            </TileContent>
+                        </tileContent>
+                    </GenericTile>
+
+            </content>
+        </Page>
+</mvc:View>

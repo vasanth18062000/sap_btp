@@ -1,0 +1,290 @@
+<mvc:View
+    xmlns:unified="sap.ui.unified"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:smartfilterbar="sap.ui.comp.smartfilterbar"
+    xmlns:f="sap.ui.layout.form"
+    controllerName="ns.proposalnew.controller.SupplierUpdateForm"
+>
+    <Page id="_IDGenPage1">
+        <customHeader>
+            <OverflowToolbar id="_IDGenOverflowToolbar1">
+                <Bar id="_IDGenBar1">
+                    <contentLeft>
+                        <Button
+                            id="_IDGenButton11"
+                            press="updateToEdit"
+                            icon="sap-icon://nav-back"
+                        />
+                        <Image
+                            id="_IDGenImage1"
+                            src="{i18n>headerImage1}"
+                            width="80%"
+                            height="400%"
+                        />
+                    </contentLeft>
+
+                    <contentMiddle>
+                        <Text
+                            id="_IDGenText1"
+                            text="Supplier Updation"
+                        />
+                    </contentMiddle>
+                    <contentRight>
+                        <Button
+                            id="_IDGenButton10"
+                            press="goHome"
+                            text="Home"
+                        />
+                    </contentRight>
+                </Bar>
+            </OverflowToolbar>
+        </customHeader>
+        <content>
+            <IconTabBar
+                class="sapUiSmallMarginBottom sapUiResponsiveContentPadding"
+                id="iconTabBar"
+            >
+                <items>
+                    <IconTabFilter
+                        id="_IDGenIconTabFilter1"
+                        text="Supplier Detail"
+                        class="sapUiSmallMarginBottom sapUiResponsiveContentPadding"
+                        iconColor="NonInteractive"
+                        key="contactTab3"
+                    >
+                        <!-- Vendor Details Form -->
+                        <f:SimpleForm
+                            id="ownerForm"
+                            title="Supplier Details"
+                            layout="ResponsiveGridLayout"
+                            labelSpanXL="3"
+                            labelSpanL="3"
+                            labelSpanM="3"
+                            labelSpanS="12"
+                            adjustLabelSpan="false"
+                        >
+                            <f:content>
+                                <VBox id="_IDGenVBox1">
+                                    <Label
+                                        id="_IDGenLabel1"
+                                        text="Supplier ID"
+                                    />
+                                    <Input
+                                        editable="false"
+                                        width="18%"
+                                        id="id"
+                                        value="{id}"
+                                    />
+                                    <Label
+                                        id="_IDGenLabel2"
+                                        text="Name of the Supplier"
+                                    />
+                                    <Input
+                                        width="18%"
+                                        id="name"
+                                        value="{name}"
+                                    />
+                                    <!-- <Label id="_IDGenLabel3" text="Logo" />
+                                <Input width="18%" id="logo" value="{logo}"/> -->
+                                    <Label
+                                        id="_IDGenLabel4"
+                                        text="Supplier Website"
+                                    />
+                                    <Input
+                                        width="18%"
+                                        id="website"
+                                        value="{website}"
+                                    />
+                                </VBox>
+                            </f:content>
+                        </f:SimpleForm>
+
+                        <!-- Next Button to move to the Contact Detail tab -->
+                        <Bar id="_IDGenBar3">
+                            <contentRight>
+                                <Button
+                                    id="_IDGenButton3"
+                                    text="Next"
+                                    press="onNextVendorDetails"
+                                    type="Emphasized"
+                                    icon="sap-icon://arrow-right"
+                                />
+                            </contentRight>
+                        </Bar>
+                    </IconTabFilter>
+                    <IconTabFilter id="_IDGenIconTabFlter2" text="Supplier Contact Detail" class="sapUiSmallMarginBottom sapUiResponsiveContentPadding" iconColor="NonInteractive" key="contactTab">
+                        <!-- Contact Details Form -->
+                        <f:SimpleForm id="contactForm" title="Supplier Contact Details" layout="ResponsiveGridLayout" labelSpanXL="3" labelSpanL="3" labelSpanM="3" labelSpanS="12" adjustLabelSpan="false">
+                            <f:content>
+                                <VBox id="_IDGenVBox2">
+                                    <Label id="_IDGenLabl5" text="Address ID" />
+                                    <Input width="18%" id="ID" editable="false" value="{path: 'ven>/id'}"/>
+                                    <Label id="_IDGenLael6" text="Address Line1" />
+                                    <Input width="35%" id="addressLine1" value="{path: 'ven>/addressLine1'}"/>
+                                    <Label id="_IDGenLbel7" text="Address Line2" />
+                                    <Input width="35%" id="addressLine2" value="{path: 'ven>/addressLine2'}"/>
+                                    <Label id="_IDGenLabe8" text="Address Line3" />
+                                    <Input width="35%" id="addressLine3" value="{path: 'ven>/addressLine3'}"/>
+                                    <Label id="_IDGenLabl9" text="City" />
+                                    <Input width="35%" id="city" value="{path: 'ven>/city'}"/>
+                                </VBox>
+                                <VBox id="_IDGenVBox3">
+                                    <Label id="_IDGenLabel10" text="Pincode" />
+                                    <Input width="35%" id="pincode" value="{path: 'ven>/pincode'}"/>
+                                    <Label id="_IDGenLabel11" text="State" />
+                                    <Input width="35%" id="state" value="{path: 'ven>/state'}"/>
+                                    <Label id="_IDGenLabel12" text="Country" />
+                                    <Input width="35%" id="country" value="{path: 'ven>/country'}" />
+                                    <!-- <Select width="35%" id="country" selectedKey="{proposalOwnerContact>country}" xmlns:core="sap.ui.core">
+                                     <core:Item key="1" text="India" />
+                                     <core:Item key="2" text="Berlin" />
+                                     <core:Item key="3" text="UK" />
+                                     <core:Item key="4" text="USA" />
+                                    </Select> -->
+
+                                </VBox>
+                            </f:content>
+                        </f:SimpleForm>
+                        <Bar id="_IDGenBar2">
+                            <contentRight>
+                            <Button id="_IDGenButton6" text="Back" press="onbackVendorDetails" type="Emphasized" icon="sap-icon://nav-back"/>
+                                <Button id="_IDGenButton4" text="Next" press="onNextContact1Details" type="Emphasized" icon="sap-icon://arrow-right"/>
+                            </contentRight>
+                        </Bar>
+                    </IconTabFilter>
+                    
+
+                    <IconTabFilter
+                        id="_IDGenIconTabFilter3"
+                        text="Supplier Contact Detail (1)"
+                        class="sapUiSmallMarginBottom sapUiResponsiveContentPadding"
+                        iconColor="NonInteractive"
+                        key="contactTab1"
+                    >
+                        <!-- Contact Details Form -->
+                        <f:SimpleForm
+                            id="simpleor"
+                            editable="true"
+                            layout="ResponsiveGridLayout"
+                            title="Supplier Contact Details"
+                            class="editableForm"
+                        >
+                            <f:content>
+                                <VBox id="_IDGenVBo7">
+                                    <Label
+                                        id="_IDGenLael13"
+                                        text="Mobile Number"
+                                    />
+                                    <Input
+                                        width="18%"
+                                        id="contact_person_1_mobileNumber"
+                                        value="{path: 'ven>/contact_person_1_mobileNumber'}"
+                                    />
+
+                                    <Label
+                                        id="_IDGenabel15"
+                                        text="Email ID"
+                                    />
+                                    <Input
+                                        width="18%"
+                                        id="contact_person_1_emailId"
+                                        value="{path: 'ven>/contact_person_1_emailId'}"
+                                    />
+                                </VBox>
+                            </f:content>
+                        </f:SimpleForm>
+
+                        <Bar id="_IDGenBar4">
+                            <contentRight>
+                                <Button
+                                    id="_IDGenButton7"
+                                    text="Back"
+                                    press="onbackContact1Details"
+                                    type="Emphasized"
+                                    icon="sap-icon://nav-back"
+                                />
+                                <Button
+                                    id="_IDGenButton5"
+                                    text="Next"
+                                    press="onNextContact2Details"
+                                    type="Emphasized"
+                                    icon="sap-icon://arrow-right"
+                                />
+                            </contentRight>
+                        </Bar>
+                    </IconTabFilter>
+
+                    <IconTabFilter
+                        id="_IDGenIconTabFilter4"
+                        text="Supplier Contact Detail (2)"
+                        class="sapUiSmallMarginBottom sapUiResponsiveContentPadding"
+                        iconColor="NonInteractive"
+                        key="contactTab2"
+                    >
+                        <!-- Contact Details Form -->
+                        <f:SimpleForm
+                            id="simpleom"
+                            editable="true"
+                            layout="ResponsiveGridLayout"
+                            title="Supplier Contact Details"
+                            class="editableForm"
+                        >
+                            <f:content>
+                                <VBox id="_IDGenVBox">
+                                    <Label
+                                        id="_IDGeLabel16"
+                                        text="Mobile Number"
+                                    />
+                                    <Input
+                                        width="18%"
+                                        id="contact_person_2_mobileNumber"
+                                        value="{path: 'ven>/contact_person_2_mobileNumber'}"
+                                    />
+
+                                    <Label
+                                        id="_IDGnLabel18"
+                                        text="Email ID"
+                                    />
+                                    <Input
+                                        width="18%"
+                                        id="contact_person_2_emailId"
+                                        value="{path: 'ven>/contact_person_2_emailId'}"
+                                    />
+                                </VBox>
+                            </f:content>
+                        </f:SimpleForm>
+
+                        <Bar id="_IDGenBar5">
+                            <contentRight>
+                                <Button
+                                    id="_IDGenButton8"
+                                    text="Back"
+                                    press="onbackContact2Details"
+                                    type="Emphasized"
+                                    icon="sap-icon://nav-back"
+                                />
+
+                                <!-- <Button id="_IDGenButton2" text="Preview" press="onView" type="Emphasized" icon="sap-icon://biometric-face"/> -->
+                            </contentRight>
+                        </Bar>
+                    </IconTabFilter>
+                </items>
+            </IconTabBar>
+        </content>
+        <footer>
+            <Bar id="_IDGenBar6">
+                <contentRight>
+                    <Button
+                        id="_IDGenButton9"
+                        text="Update"
+                        press="onUpdate"
+                        type="Success"
+                        icon="sap-icon://accept"
+                    />
+                           <Button id="_IDGenButton2" text="Preview" press="onView" type="Emphasized" icon="sap-icon://biometric-face"/>
+                </contentRight>
+            </Bar>
+        </footer>
+    </Page>
+</mvc:View>

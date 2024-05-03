@@ -1,0 +1,112 @@
+<mvc:View
+    xmlns:smarttable="sap.ui.comp.smarttable"
+    controllerName="ns.proposalnew.controller.ClientViewEdit"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns="sap.m"
+    xmlns:smartFilterBar="sap.ui.comp.smartfilterbar"
+    
+>
+    <Page
+        id="page"
+        title="Customer View" showNavButton="true" navButtonPress=".EditToHomeButton"
+    >
+    
+        <content>
+    
+            <smartFilterBar:SmartFilterBar
+                id="smartFilterBar" entitySet="ProposalCustomer"
+                key="id"
+            >
+       
+                 
+                <smartFilterBar:controlConfiguration>
+                    <!-- <smartFilterBar:ControlConfiguration
+                        id="IDGenColumn1"
+                        visibleInAdvancedArea="true"
+                        label="Customer ID"
+                        key="id"
+                    /> -->
+                    <smartFilterBar:ControlConfiguration
+                        id="name"
+                        visibleInAdvancedArea="true"
+                        label="Name of the Customer"
+                        key="name"
+                    />
+                    
+                </smartFilterBar:controlConfiguration>
+                <!-- Define Filters based on your OData Model -->
+                <!-- Additional configuration as needed -->
+            </smartFilterBar:SmartFilterBar>
+                 <Bar >
+        <contentRight>
+        <Toolbar id="_IDGenToolbar1">
+                            <!-- <ToolbarSpacer id="_IDGenToolbarSpacer1" /> -->
+                            <SearchField id="_IDGenSearchField1" placeholder="{i18n>search}" width="100%" search=".onFilter" />
+                        </Toolbar>
+        </contentRight>
+        </Bar>
+            <smarttable:SmartTable
+                id="idSmarTable"
+                smartFilterId="smartFilterBar"
+                entitySet="ProposalCustomer"
+                enableAutoBinding="true"
+                tableType="ResponsiveTable"
+                initiallyVisibleFields="name,website"
+
+            >
+                <Table 
+                    id="idResponsiveTable"
+                    selectionChange="handleSelectionChange"
+                    mode="SingleSelectMaster"
+                                        growing="true"
+                    growingThreshold="3"
+                    growingDirection="Downwards"
+                    growingTriggerText="Load more..."
+
+                />
+            </smarttable:SmartTable>
+            <!-- <Table id="_IDGenTable1" items="{path: '/ProposalCustomer'}">
+                    <headerToolbar>
+                        <Toolbar>
+                            <Title text="{i18n>carList}" />
+                            <ToolbarSpacer />
+                            <SearchField placeholder="{i18n>search}" width="50%" search=".onFilter" />
+                        </Toolbar>
+                    </headerToolbar>
+                    <columns>
+                        <Column id="_IDGenColumn1">
+                            <Label id="_IDGenLabel1" text="id" />
+                        </Column>
+                        <Column id="_IDGenColumn2">
+                            <Label id="_IDGenLabel2" text="name" />
+                        </Column>
+                        <Column id="_IDGenColumn3">
+                            <Label id="_IDGenLabel3" text="website" />
+                        </Column>
+                    </columns>
+                    <items>
+                        <ColumnListItem type="Navigation" press=".onPress" id="_IDGenColumnListItem1">
+                            <cells>
+                                <Text id="_IDGenText1" text="{id}" />
+                                <Text id="_IDGenText2" text="{name}" />
+                                <Text id="_IDGenText3" text="{website}" />
+                                <Button
+                                text="{i18n>update}"
+                                icon="sap-icon://edit"
+                                press="onOpenUpdateDialog"
+                                type="Emphasized"
+                            />
+                            <Button
+                                text="{i18n>Delete}"
+                                icon="sap-icon://delete"
+                                press="onDelete"
+                                type="Emphasized"
+                            />
+                            </cells>
+                        </ColumnListItem>
+                    </items>
+                </Table> -->
+        </content>
+    </Page>
+</mvc:View>
