@@ -1,0 +1,37 @@
+{
+  "name": "sample",
+  "version": "1.0.0",
+  "description": "A simple CAP project.",
+  "repository": "<Add your repository here>",
+  "license": "UNLICENSED",
+  "private": true,
+  "dependencies": {
+    "@angular/cli": "^7.3.10",
+    "@sap/cds": "^7",
+    "@sap/cds-hana": "^2",
+    "@sap/xssec": "^3",
+    "axios": "^1.6.8",
+    "client-oauth2": "^4.3.3",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "passport": "^0",
+    "request-promise": "^4.2.6"
+  },
+  "devDependencies": {
+    "@cap-js/sqlite": "^1",
+    "@sap/cds-dk": "^7",
+    "cds-swagger-ui-express": "^0.8.0"
+  },
+  "scripts": {
+    "start": "cds-serve"
+  },
+  "cds": {
+    "requires": {
+      "[production]": {
+        "db": "hana",
+        "auth": "mocked"
+      },
+      "auth": "mocked"
+    }
+  }
+}
