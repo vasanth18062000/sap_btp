@@ -1,0 +1,49 @@
+{
+  "name": "royal_enfield_n",
+  "version": "1.0.0",
+  "description": "A simple CAP project.",
+  "repository": "<Add your repository here>",
+  "license": "UNLICENSED",
+  "private": true,
+  "dependencies": {
+    "@cap-js/hana": "^1",
+    "@sap-cloud-sdk/http-client": "^3.24.0",
+    "@sap-cloud-sdk/resilience": "^3.24.0",
+    "@sap/cds": "^8",
+    "@sap/cds-hana": "^2",
+    "@sap/cds-odata-v2-adapter-proxy": "^1.9.21",
+    "@sap/hdi-deploy": "^5.3.2",
+    "@sap/xssec": "^4",
+    "bcryptjs": "^2.4.3",
+    "express": "^4"
+  },
+  "devDependencies": {
+    "@cap-js/cds-types": "^0.7.0",
+    "@cap-js/sqlite": "^1",
+    "@sap/cds-dk": "^8.5.0"
+  },
+  "scripts": {
+    "start": "cds-serve",
+    "watch-reui": "cds watch --open reui/webapp/index.html?sap-ui-xx-viewCache=false"
+  },
+  "cds": {
+    "sql": {
+      "native_hana_associations": false
+    },
+    "requires": {
+      "auth": "mocked",
+      "db": "hana",
+      "API_BUSINESS_PARTNER": {
+        "kind": "odata-v2",
+        "model": "srv/external/API_BUSINESS_PARTNER",
+        "credentials": {
+          "url": "https://sandbox.api.sap.com/s4hanacloud/sap/opu/odata/sap/API_BUSINESS_PARTNER"
+        }
+      },
+      "logger": {
+        "level": "debug"
+      },
+      "application-logging": true
+    }
+  }
+}
