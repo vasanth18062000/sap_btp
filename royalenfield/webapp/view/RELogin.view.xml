@@ -1,0 +1,86 @@
+<mvc:View
+    controllerName="ns.royalenfield.controller.RELogin"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    displayBlock="true">
+
+    <Page showNavButton="false" class="sapUiContentPadding">
+        <customHeader>
+            <OverflowToolbar id="_IDGenOverflowToolbar1">
+                <Bar id="_IDGenBar1" class="loginheader">
+                    <contentLeft>
+                        <Image
+                            id="_IDGenmage1"
+                            src="https://www.royalenfield.com/content/dam/royal-enfield/india/logos/logo.svg"
+                            width="80%"
+                            height="100%"
+                        />
+                    </contentLeft>
+                    <contentMiddle>
+                        <!-- <Text id="_IDGenTxt1" text="LOGIN" class="logs" /> -->
+                    </contentMiddle>
+                    <contentRight>
+                        <Image id="_IDGenImage2" src="{i18n>LaderaLogo}" width="100%" height="300%" />
+                    </contentRight>
+                </Bar>
+            </OverflowToolbar>
+        </customHeader>
+
+        <content>
+            <!-- HBox to align Image and Login Form side by side -->
+            <HBox justifyContent="SpaceBetween" alignItems="Center" class="loginLayout">
+
+               
+                <VBox justifyContent="Center" alignItems="Center" class="animatedContent">
+
+
+                    <VBox width="450px" height="350px" class="loginForm">
+                        <Title text="Log In" level="H2" class="welcomeText" />
+                        <Image
+                            id="_IDGenmageLogin"
+                            src="img/user-icon.png"
+                            width="50px" class="imgClass"
+                        />
+
+                        <Input
+                            id="emailInput"
+                            placeholder="Enter Email"
+                            type="Email"
+                            class="email"
+                            valueStateText="Please enter a valid email address."
+                            liveChange=".onLiveChangeEmail"
+                        />
+
+                        <VBox >
+                        <HBox >
+                        
+                        <Input
+                            id="passwordInput"
+                            placeholder="Enter Password"
+                            type="Password"
+                            class="passwordclass"
+                            valueStateText="Password cannot be empty." width="240%"
+                        />
+                         <HBox class="loginTogglePasswordInput">
+                                    <Button id="togglePasswordVisibility"
+                                        icon="sap-icon://show"
+                                        tooltip="Show/Hide Password"
+                                        press="onTogglePasswordVisibility" />
+                                        </HBox>
+                                        </HBox>
+                        </VBox>
+
+                        <Button
+                            class="signInButton"
+                            text="Sign In"
+                            width="100%"
+                            type="Emphasized"
+                            press=".onSignInPress"
+                        />
+                    </VBox>
+                </VBox>
+
+            </HBox>
+        </content>
+    </Page>
+</mvc:View>

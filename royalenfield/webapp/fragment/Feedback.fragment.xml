@@ -1,0 +1,31 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+    <Dialog
+        id="feedbackDialog"
+        title="Feedback"
+        type="Message"
+        stretchOnPhone="true">
+        <content>
+            <VBox>
+                <Text text="We value your feedback. Please let us know your thoughts below:" />
+                <TextArea
+                    id="feedbackTextArea"
+                    placeholder="Write your feedback here..."
+                    rows="5"
+                    width="100%"
+                />
+            </VBox>
+        </content>
+        <beginButton>
+            <Button
+                text="Submit"
+                press=".onSubmitFeedback"
+            />
+        </beginButton>
+        <endButton>
+            <Button
+                text="Cancel"
+                press=".onCloseFeedback"
+            />
+        </endButton>
+    </Dialog>
+</core:FragmentDefinition>

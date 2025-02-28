@@ -1,0 +1,157 @@
+<mvc:View xmlns:unified="sap.ui.unified" controllerName="ns.royalenfield.controller.REDealer"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m" xmlns:form="sap.ui.layout.form" xmlns:core="sap.ui.core">
+    <Page class="backgroundImage" showHeader="true">
+<customHeader>
+            <OverflowToolbar id="_IDGenOverflowToolbar11">
+                <Bar id="_IDGenBar11">
+                    <contentLeft>
+                    <Button press=".onbackToRoyal" text="Back" type="Emphasized" class="button1" icon="sap-icon://nav-back"/>
+                        <Image id="_IDGenImage11" src="{i18n>RELogo}" width="70%" height="90%" />
+                    </contentLeft>
+                    <contentMiddle>
+                <Title text="{i18n>BecomeADealer}" class="customHeaderTitle" />
+            </contentMiddle>
+ 
+                    <contentRight>
+                        <Image id="_IDGenImage12" src="{i18n>LaderaLogo}" width="100%" height="300%" />
+                    </contentRight>
+                </Bar>
+            </OverflowToolbar>
+        </customHeader>
+        <content>
+   
+        <VBox justifyContent="Center" alignItems="Center"  height="170%" class="fullPageVBox" >
+            <VBox class="formContainer wideFormContainer sapUiResponsiveMargin windowClass" justifyContent="Center" wideFormContainer="120px" alignItems="Inherit"  >
+                <!-- Title Section -->
+                <Title text="{i18n>dealerForm}" level="H1" class="formTitle" />
+                <Text  text="{i18n>RoyalText}" class="ParaText2  " />
+            <Text text="{i18n>paraText}" class="ParaText MovingText" />
+                <!-- Content Section with HBox -->
+                <HBox class="formContent" justifyContent="SpaceBetween" width="100%">
+                    <!-- Left Side VBox -->
+                    <VBox class="leftForm" width="48%">
+                        <Label text="{i18n>fullName}" required="true" />
+                        <Input id="nameInput" change="onFirstNameChange" placeholder="{i18n>EnterYourFullName}" class="InputLayout"/>
+ 
+   
+ 
+                            <Label text="{i18n>email}" required="true" />
+                            <Input id="emailInput" change="onEmailChange" type="Email"
+                                placeholder="{i18n>EnterYourEmailAddress}" class="InputLayout" />
+ 
+                            <Label text="{i18n>ContactNumber}" change="onMobileNumberChange" required="true" />
+                            <Input id="contactInput" type="Tel" change="onMobileNumberChange"
+ 
+                                placeholder="{i18n>Enter your contact number}" class="InputLayout" />
+ 
+                            <Label text="Business Name" required="true" />
+                            <Input id="businessNameInput" placeholder="{i18n>EnterYourBusinessName}"
+                                class="InputLayout" />
+ 
+                            <Label text="{i18n>Address}" required="true" />
+                            <TextArea id="addressInput" placeholder="{i18n>EnterYourAddress}"
+                                rows="3" width="100%" class="InputLayout" />
+ 
+                            <Label text="{i18n>pincode}" required="true" />
+                            <Input id="pincode" placeholder="{i18n>EnterYourPincode}"
+                                liveChange="onPincodeChange" editable="true"
+                                change="onPincodeChange" class="InputLayout" />
+ 
+                            <Label id="_IDGenLabel3" text="{i18n>UplodeIDProof}" />
+                            <unified:FileUploader
+                                id="idDP"
+                                maximumFilenameLength="30" maximumFileSize="1" multiple="false"
+                                sameFilenameAllowed="false" change="onChangeDP"
+                                fileType="png,jpg,jpeg"
+                                filenameLengthExceed="onFilenameLengthExceed"
+                                fileSizeExceed="on2MBFileSizeExceed" typeMissmatch="onTypeMissmatch"
+                                uploadComplete="onUploadDPComplete" visible="true"
+                            />
+                            <TextArea id="idBase64AreaDealer" editable="true" height="300px" width="500px"
+                                visible="false" />
+                            <Text id="image" class="sapUiSmallMarginBottom size"
+                                text="{i18n>SIZEUPTO2MB}"></Text>
+ 
+                        </VBox>
+ 
+                        <!-- Right Side VBox -->
+                        <VBox class="rightForm" width="48%">
+ 
+ 
+                            <Label text="{i18n>city}" required="true" />
+                            <Input id="city" placeholder="{i18n>enterYourCity}"
+                                value="{locationData>/district}"
+                                editable="true" class="InputLayout" />
+ 
+                            <Label text="State" required="true" />
+                            <Input id="state" placeholder="{i18n>enterYourState}"
+                                value="{locationData>/state}"
+                                editable="true" class="InputLayout" />
+ 
+                            <Label text="{i18n>Country}" required="true" />
+                            <Input id="country" placeholder="{i18n>enterYourCountry}"
+                                value="{locationData>/country}" editable="true" class="InputLayout" />
+ 
+                            <Label text="{i18n>PreferredLocationForDealership}" required="true" />
+                            <Input id="locationInput" placeholder="{i18n>EnterPreferredLocation}"
+                                class="InputLayout" />
+ 
+                            <Label text="{i18n>Comments}" />
+                            <TextArea id="commentsInput" placeholder="{i18n>AdditionalInformation}"
+                                rows="3" width="100%" class="InputLayout" />
+ 
+                            <Label text="{i18n>SelectSource}" required="true" />
+                            <Select id="selectSource" width="100%" class="InputLayout">
+                                <items>
+                                    <core:Item text="{i18n>SelectSource}" key="1" />
+                                    <core:Item text="{i18n>ExistingREDealer}" key="2" />
+                                    <core:Item text="{i18n>Other}" key="3" />
+                                    <core:Item text="{i18n>REEmployee}" key="4" />
+                                    <core:Item text="{i18n>Friends}" key="5" />
+                                </items>
+                            </Select>
+ 
+                            <Label text="{i18n>ExistingDealerText}" class="InputLayout" />
+                            <RadioButtonGroup columns="2" selectedIndex="1" id="exis">
+                                <buttons>
+                                    <RadioButton text="{i18n>Yes}" />
+                                    <RadioButton text="{i18n>No}" />
+                                </buttons>
+                            </RadioButtonGroup>
+                        </VBox>
+ 
+                    </HBox>
+ 
+                    <Text text="{i18n>Disclaimer}" class="ParaTextBottom" />
+ 
+                    <CheckBox id="agreeTerms" text="{i18n>TermsAndConditions}"
+                        select="onCheckboxSelect" />
+                    <Link text="{i18n>ViewTermsAndConditions}" id="onNextN" press="onNextTermsPage"
+                        target="_blank" />
+ 
+                    <!-- Submit Button -->
+                    <Button
+                        text="{i18n>Submit}"
+                        type="Emphasized"
+                        press=".onSubmit"
+                        class="formButton"
+                        width="100%" />
+                </VBox>
+            </VBox>
+ 
+ 
+        </content>
+        <!-- <footer>
+            <OverflowToolbar>
+                <ToolbarSpacer />
+                <Button
+                    class="chatusicon"
+                    icon="img/chatus.png"
+                    press="handleMessagePopoverPress"
+                />
+            </OverflowToolbar>
+        </footer> -->
+    </Page>
+</mvc:View>
+ 

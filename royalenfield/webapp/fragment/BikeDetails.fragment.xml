@@ -1,0 +1,83 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+    <Dialog
+        id="feedbackDialog"
+        
+        title="{/selectedBike/title}"
+        type="Message"
+        stretchOnPhone="true">
+        <content>
+            <VBox>
+                <!-- Description -->
+                <HBox>
+                    <!-- <Text text="Description: " class="boldTextRed"/> -->
+                    <Text text="{/selectedBike/description}" class="normalTextBlackDescription sapUiSmallMarginBottom"/>
+                    <!-- <Text text="{/selectedBike/design}" class="normalTextBlack"/> -->
+                </HBox>
+
+                <!-- Engine -->
+                <HBox>
+                    <Text text="Engine: " class="boldTextRed"/>
+                    <Text text="{/selectedBike/engine}" class="normalTextBlack"/>
+                </HBox>
+
+                <HBox>
+                    <Text text="ABS: " class="boldTextRed"/>
+                    <Text text="{/selectedBike/features/abs}" class="normalTextBlack"/>
+                </HBox>
+                <HBox>
+                    <Text text="Lighting: " class="boldTextRed"/>
+                    <Text text="{/selectedBike/features/lighting}" class="normalTextBlack"/>
+                </HBox>
+                <HBox>
+                    <Text text="Display: " class="boldTextRed"/>
+                    <Text text="{/selectedBike/features/display}" class="normalTextBlack"/>
+                </HBox>
+                <HBox>
+                    <Text text="Tires: " class="boldTextRed"/>
+                    <Text text="{/selectedBike/features/tires}" class="normalTextBlack"/>
+                </HBox>
+
+                <!-- Suspension -->
+                <HBox>
+                    <Text text="Suspension: " class="boldTextRed"/>
+                    <Text text="{/selectedBike/suspension}" class="normalTextBlack"/>
+                </HBox>
+
+                <!-- Fuel Capacity -->
+                <HBox>
+                    <Text text="Fuel Capacity: " class="boldTextRed"/>
+                    <Text text="{/selectedBike/fuelCapacity}" class="normalTextBlack"/>
+                </HBox>
+
+                <!-- Available Colors -->
+                <HBox>
+                    <Text text="Available Colors: " class="boldTextRed"/>
+                    <Text text="{/selectedBike/colors}" class="normalTextBlack"/>
+                </HBox>
+
+                <!-- Price -->
+                <HBox>
+                    <Text text="Price: " class="boldTextRed"/>
+                    <Text text="{/selectedBike/price}" class="normalTextBlack"/>
+                </HBox>
+
+                <!-- Call to Action -->
+                <HBox class="normalTextBlackFooterInFragmentc">
+                    <Text text="{/selectedBike/callToAction}" class="normalTextBlackFooterInFragment"/>
+                </HBox>
+            </VBox>
+        </content>
+        <beginButton>
+            <Button
+                text="Continue"
+                press=".onDialogSubmit"
+            />
+        </beginButton>
+        <endButton>
+            <Button
+                text="Cancel"
+                press=".onCloseFeedback"
+            />
+        </endButton>
+    </Dialog>
+</core:FragmentDefinition>

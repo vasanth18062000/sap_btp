@@ -1,0 +1,118 @@
+<mvc:View xmlns:core="sap.ui.core"
+    controllerName="ns.royalenfield.controller.REBulkOrders"
+    displayBlock="true"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:f="sap.ui.layout.form"
+    xmlns="sap.m">
+
+    <Page id="page" title="Royal Enfield">
+        <customHeader>
+            <OverflowToolbar id="IDGenOverflowToolbar1">
+                <Bar id="IDGenBar1">
+                    <contentLeft>
+                        <Button id="_IDGenButton" press=".onbackToRoyal" text="Back" type="Emphasized"
+                            class="button1" icon="sap-icon://nav-back" />
+                        <Image id="IDGenImage1" src="{i18n>RELogo}" width="70%" height="90%" />
+                    </contentLeft>
+                    <contentMiddle>
+                <Title text="{i18n>BulkOrder}" class="customHeaderTitle" />
+
+            </contentMiddle>
+                    <contentRight>
+                        <Image id="IDGenImage2" src="{i18n>LaderaLogo}" width="100%" height="300%" />
+                    </contentRight>
+                </Bar>
+            </OverflowToolbar>
+        </customHeader>
+
+        <VBox id="contentVBox" width="100%" alignItems="Center" justifyContent="Start">
+            <!-- Image Section -->
+            <VBox id="_IDGenVBox1" width="100%" alignItems="Center">
+                <Image id="_IDGenImage4"
+                    src="https://store.royalenfield.com/media/wysiwyg/bulk_orders_steps.jpg"
+                    width="100%"
+                    alt="Bulk order poster" />
+            </VBox>
+
+            <!-- Form Section -->
+            <VBox id="_IDGenVBox2" width="50%">
+                <f:SimpleForm id="bulkOrderForm"
+                    title="{i18n>BulkOrderDetails}"
+                    layout="ResponsiveGridLayout"
+                    labelSpanXL="3"
+                    labelSpanL="3"
+                    labelSpanM="3"
+                    labelSpanS="12"
+                    adjustLabelSpan="false">
+                    <f:content>
+                        <Label id="nameLabel" text="{i18n>Name}" required="true" />
+                        <Input id="nameInput" placeholder="Enter Your Name" />
+
+                        <Label id="emailLabel" text="{i18n>emailId}" required="true" />
+                        <Input id="emailInput" placeholder="{i18n>EnterYourMailId}" type="Email" />
+
+                        <Label id="gstinLabel" text="{i18n>GSTIN}" />
+                        <Input id="gstinInput" placeholder="{i18n>egstin}" />
+
+                        <Label id="quantityLabel" text="{i18n>Quantity}" required="true" />
+                        <Input id="quantityInput" placeholder="{i18n>EnterTheQuantity}"
+                            type="Number" />
+
+                        <Label id="detailsLabel" text="{i18n>Details}" />
+                        <TextArea id="detailsInput" placeholder="{i18n>enterAdditionalDetails}"
+                            growing="true" growingMaxLines="5" />
+
+                        <!-- <Label id="phoneLabel" text="Phone Number" required="true" />
+                        <Input id="phoneInput" placeholder="Enter Phone Number" type="Tel" /> -->
+
+                        <Label id="companyLabel" text="{i18n>Company}" />
+                        <Input id="companyInput" placeholder="{i18n>enterCompanyName}" />
+
+                        <Label id="categoryLabel" text="{i18n>CategoryType}" required="true" />
+                        <MultiComboBox id="categoryMultiSelect"
+                            placeholder="{i18n>SelectCategories}">
+                            <core:Item id="_IDGenItem1" key="helmet" text="{i18n>Helmet}" />
+                            <core:Item id="_IDGenItem2" key="ridingJacket"
+                                text="{i18n>RidingJacket}" />
+                            <core:Item id="_IDGenItem3" key="gloves" text="{i18n>Gloves}" />
+                            <core:Item id="_IDGenItem4" key="shoesBoots" text="{i18n>ShoesAndBoots}" />
+                            <core:Item id="_IDGenItem5" key="tshirt" text="{i18n>T-Shirt}" />
+                            <core:Item id="_IDGenItem6" key="trousers" text="{i18n>Trousers}" />
+                            <core:Item id="_IDGenItem7" key="cargoDenims" text="{i18n>cad}" />
+                            <core:Item id="_IDGenItem8" key="shirts" text="{i18n>Shirts}" />
+                            <core:Item id="_IDGenItem9" key="lifestyleJacket"
+                                text="{i18n>LifeStyleJacket}" />
+                            <core:Item id="_IDGenItem10" key="caps" text="{i18n>Caps}" />
+                            <core:Item id="_IDGenItem11" key="mugs" text="{i18n>Mugs}" />
+                            <core:Item id="_IDGenItem12" key="keychain" text="{i18n>Keychain}" />
+                            <core:Item id="_IDGenItem13" key="bracelet" text="{i18n>Bracelet}" />
+                            <core:Item id="_IDGenItem14" key="bags" text="{i18n>Bags}" />
+                            <core:Item id="_IDGenItem15" key="facemasks" text="{i18n>Facemasks}" />
+                            <core:Item id="_IDGenItem16" key="headgear" text="{i18n>HeadGear}" />
+                            <core:Item id="_IDGenItem17" key="belts" text="{i18n>Belts}" />
+                            <core:Item id="_IDGenItem18" key="wallet" text="{i18n>Wallet}" />
+                            <core:Item id="_IDGenItem19" key="womenswear" text="{i18n>WomensWear}" />
+                        </MultiComboBox>
+
+
+                        <VBox id="recaptchaBox" width="100%" alignItems="Center">
+                        </VBox>
+
+                        <Button id="submitButton" text="{i18n>Submit}" press="onSave" type="Success"
+                            icon="sap-icon://accept" />
+                    </f:content>
+                </f:SimpleForm>
+            </VBox>
+        </VBox>
+        <footer>
+            <OverflowToolbar>
+                <ToolbarSpacer />
+                <Button
+                    class="chatusicon"
+                    icon="img/chatus.png"
+                    press="handleMessagePopoverPress"
+                />
+            </OverflowToolbar>
+        </footer>
+    </Page>
+</mvc:View>

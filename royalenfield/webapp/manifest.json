@@ -1,0 +1,361 @@
+{
+  "_version": "1.65.0",
+  "sap.app": {
+    "id": "ns.royalenfield",
+    "type": "application",
+    "i18n": "i18n/i18n.properties",
+    "applicationVersion": {
+      "version": "0.0.1"
+    },
+    "title": "{{appTitle}}",
+    "description": "{{appDescription}}",
+    "resources": "resources.json",
+    "sourceTemplate": {
+      "id": "@sap/generator-fiori:basic",
+      "version": "1.15.6",
+      "toolsId": "62b6e5fd-45ac-49f2-af53-f6f69fe690ec"
+    },
+    "dataSources": {
+      "mainService": {
+        "uri": "/v2/odata/v4/re/",
+        "type": "OData",
+        "settings": {
+          "annotations": [],
+          "localUri": "localService/mainService/metadata.xml",
+          "odataVersion": "2.0"
+        }
+    }
+}
+        },
+    "sap.ui5": {
+        "flexEnabled": true,
+        "dependencies": {
+            "minUI5Version": "1.131.0",
+            "libs": {
+                "sap.m": {},
+                "sap.ui.core": {},
+                "sap.tnt": {},
+                "sap.viz": {},
+				"sap.ui.layout": {},
+				"sap.ui.unified": {}
+            }
+        },
+        "contentDensities": {
+            "compact": true,
+            "cozy": true
+        },
+        "models": {
+            "i18n": {
+                "type": "sap.ui.model.resource.ResourceModel",
+                "settings": {
+                    "bundleName": "ns.royalenfield.i18n.i18n",
+                    "supportedLocales": [
+                        "hi",
+                        "en",
+                        "ta",
+                        "sp"
+                    ],
+                    "fallbackLocale": "en"
+                }
+            },
+            "": {
+                "dataSource": "mainService",
+                "preload": true,
+                "settings": {}
+            },
+            "samp": {
+                "dataSource": "mainService",
+                "preload": true,
+                "settings": {}
+            },
+            "side": {
+                "type": "sap.ui.model.json.JSONModel",
+                "uri": "model/sideContent.json"
+            }
+        },
+        "resources": {
+            "css": [
+                {
+                    "uri": "css/style.css"
+                }
+            ]
+        },
+        "routing": {
+            "config": {
+                "sample": {
+                    "stretch": true,
+                    "files": [
+                        "RoyalEnfield.view.xml",
+                        "RoyalEnfield.controller.js",
+                        "manifest.json"
+                    ]
+                },
+                "routerClass": "sap.m.routing.Router",
+                "controlAggregation": "pages",
+                "controlId": "app",
+                "transition": "slide",
+                "type": "View",
+                "viewType": "XML",
+                "path": "ns.royalenfield.view",
+                "async": true,
+                "viewPath": "ns.royalenfield.view"
+            },
+            "routes": [
+                {
+                    "name": "RouteRoyalEnfield",
+                    "pattern": "",
+                    "target": [
+                        "TargetRoyalEnfield"
+                    ]
+                },
+                {
+                    "name": "RouteRoyalEnfieldLogin",
+                    "pattern": "",
+                    "target": [
+                        "TargetRoyalEnfield"
+                    ]
+                },
+                {
+                    "name": "royalEnfieldCustomer",
+                    "pattern": "MainPage/RoyalEnfieldCustomer",
+                    "target": [
+                        "royalEnfieldCustomer"
+                    ]
+                },
+                {
+                    "name": "royalEnfieldContactus",
+                    "pattern": "MainPage/RoyalEnfieldContactus",
+                    "target": [
+                        "royalEnfieldContactus"
+                    ]
+                },
+                {
+                    "name": "royalEnfieldstorelocator",
+                    "pattern": "MainPage/RoyalEnfieldstorelocator",
+                    "target": [
+                        "royalEnfieldstorelocator"
+                    ]
+                },
+                {
+                    "name": "royalEnfieldservicecenter",
+                    "pattern": "MainPage/RoyalEnfieldservicecenter",
+                    "target": [
+                        "royalEnfieldservicecenter"
+                    ]
+                },
+                {
+                    "name": "rETestRide",
+                    "pattern": "MainPage/TestRideCollections",
+                    "target": [
+                        "rETestRide"
+                    ]
+                },
+                {
+                    "name": "reDealer",
+                    "pattern": "MainPage/ReDealer",
+                    "target": [
+                        "reDealer"
+                    ]
+                },
+                {
+                    "name": "bikeForm",
+                    "pattern": "MainPage/TestRideCollections/bikeForm/{bike}",
+                    "target": [
+                        "bikeForm"
+                    ]
+                },
+                {
+                    "name": "refq",
+                    "pattern": "refq",
+                    "target": [
+                        "refq"
+                    ]
+                },
+                {
+                    "name": "rEAboutDealer",
+                    "pattern": "MainPage/REAboutDealer",
+                    "target": [
+                        "rEAboutDealer"
+                    ]
+                },
+                {
+                    "name": "TermsAndCondition",
+                    "pattern": "MainPage/ReDealer/TermsAndCondition",
+                    "target": [
+                        "TermsAndCondition"
+                    ]
+                },
+                {
+                    "name": "royalEnfield",
+                    "pattern": "MainPage/RoyalEnfield",
+                    "target": [
+                        "royalEnfield"
+                    ]
+                },
+                {
+                    "name": "royalEnfieldAboutUs",
+                    "pattern": "MainPage/RoyalEnfieldAboutUs",
+                    "target": [
+                        "royalEnfieldAboutUs"
+                    ]
+                },
+                {
+                    "name": "royalEnfieldBusinessHub",
+                    "pattern": "MainPage/RoyalEnfieldBusinessHub",
+                    "target": [
+                        "royalEnfieldBusinessHub"
+                    ]
+                },
+                {
+                    "name": "royalEnfieldBulkOrder",
+                    "pattern": "MainPage/RoyalEnfieldBulkOrder",
+                    "target": [
+                        "royalEnfieldBulkOrder"
+                    ]
+                },
+                {
+                    "name": "refinance",
+                    "pattern": "MainPage/Finance",
+                    "target": [
+                        "refinance"
+                    ]
+                },
+                {
+                    "name": "REWarranty",
+                    "pattern": "MainPage/REWarranty",
+                    "target": [
+                        "REWarranty"
+                    ]
+                },
+                {
+                    "name": "relogin",
+                    "pattern": "MainPage",
+                    "target": [
+                        "relogin"
+                    ]
+                },
+                {
+                    "name": "dealerchart",
+                    "pattern": "MainPage/Dealerchart",
+                    "target": [
+                        "dealerchart"
+                    ]
+                    },
+                    {
+                    "name": "reDealerObject",
+                    "pattern": "MainPage/dealerObject/{dealerId}",
+                    "target": [
+                        "reDealerObject"
+                    ]
+                },
+                {
+                    "name": "REExternalChart",
+                    "pattern": "MainPage/REExternalChart",
+                    "target": [
+                        "rEExternalChart"
+                    ]
+                }
+
+            ],
+            "targets": {
+                "TargetRoyalEnfield": {
+                    "viewType": "XML",
+                    "transition": "slide",
+                    "clearControlAggregation": false,
+                    "viewId": "RELogin",
+                    "viewName": "RELogin"
+                },
+                "dealerchart":{
+                    "viewId": "REDealerChart",
+                    "viewName": "REDealerChart"
+                },
+
+                "relogin":{
+                    "viewId": "RoyalEnfield",
+                    "viewName": "RoyalEnfield"
+                },
+                "royalEnfieldCustomer": {
+                    "viewId": "RECustomer",
+                    "viewName": "RECustomer"
+                },
+                "royalEnfieldContactus": {
+                    "viewId": "REContactus",
+                    "viewName": "REContactus"
+                },
+                "royalEnfieldstorelocator": {
+                    "viewId": "REStoreLocator",
+                    "viewName": "REStoreLocator"
+                },
+                "royalEnfieldservicecenter": {
+                    "viewId": "REServiceCenterLocator",
+                    "viewName": "REServiceCenterLocator"
+                },
+                "rETestRide": {
+                    "viewId": "RETestRide",
+                    "viewName": "RETestRide"
+                },
+                "bikeForm": {
+                    "viewId": "RERideForm",
+                    "viewName": "RERideForm"
+                },
+                "reDealer": {
+                    "viewId": "REDealer",
+                    "viewName": "REDealer"
+                },
+                "refq": {
+                    "viewId": "REFAQ",
+                    "viewName": "REFAQ"
+                },
+                "TermsAndCondition": {
+                    "viewId": "RETermsAndCondition",
+                    "viewName": "RETermsAndCondition"
+                },
+                "royalEnfieldAboutUs": {
+                    "viewId": "REAboutUs",
+                    "viewName": "REAboutUs"
+                },
+                "rEAboutDealer": {
+                    "viewId": "REAboutDealer",
+                    "viewName": "REAboutDealer"
+                },
+                "royalEnfieldBusinessHub": {
+                    "viewId": "REBusinessHub",
+                    "viewName": "REBusinessHub"
+                },
+                "royalEnfieldBulkOrder": {
+                    "viewId": "REBulkOrders",
+                    "viewName": "REBulkOrders"
+                },
+                "refinance": {
+                    "viewId": "REFinance",
+                    "viewName": "REFinance"
+                },
+                "REWarranty": {
+                    "viewId": "REWarranty",
+                    "viewName": "REWarranty"
+                },
+                "rEExternalChart": {
+                    "viewId": "rEExternalChart",
+                    "viewName": "REExternalChart"
+                },
+                "reDealerObject":{
+                     "viewId": "REDealerObject",
+                    "viewName": "REDealerObject",
+                    "viewLevel": 2,
+                    "controlAggregation": "pages",
+                    "controlId": "app"
+                }
+            }
+        },
+        "rootView": {
+            "viewName": "ns.royalenfield.view.App",
+            "type": "XML",
+            "id": "App"
+        }  
+  },
+  "sap.cloud": {
+    "public": true,
+    "service": "nsroyalenfield"
+  }
+}
+

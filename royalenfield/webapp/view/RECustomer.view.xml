@@ -1,0 +1,255 @@
+<mvc:View xmlns:core="sap.ui.core"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:f="sap.ui.layout.form"
+    controllerName="ns.royalenfield.controller.RECustomer">
+    <Page id="customerPage">
+
+        <!-- header image -->
+        <customHeader>
+            <OverflowToolbar id="_IDGenOverflowToolbar1">
+                <Bar id="_IDGenBar1">
+                    <contentLeft>
+                        <!-- <Image
+                            src="img/back1.png"
+                            alt="Back"
+                            width="70px"
+                            height="90px"
+                            press=".onbackToRoyal"
+                        /> -->
+                        <Button press=".onbackToRoyal" text="Back" type="Emphasized" class="button1"
+                            icon="sap-icon://nav-back" />
+
+
+                        <!-- <Button text="Back" press=".onbackToRoyal"
+                        class="customBackButton" /> -->
+                        <Image id="_IDGenImage1" src="{i18n>RELogo}" width="70%" height="90%" />
+                    </contentLeft>
+
+                    <contentMiddle>
+                        <Title text="{i18n>CustomerCreation}" class="customHeaderTitle" />
+
+                    </contentMiddle>
+
+                    <contentRight>
+                        <Image id="_IDGenImage2" src="{i18n>LaderaLogo}" width="100%" height="300%" />
+                    </contentRight>
+                </Bar>
+            </OverflowToolbar>
+        </customHeader>
+
+        <content>
+            <!-- FlexBox to organize the image and form horizontally -->
+            <FlexBox id="_IDGenFlexBox" direction="Row" justifyContent="SpaceBetween"
+                alignItems="Start" class="sapUiResponsiveMargin">
+                <!-- Image Section -->
+                <VBox id="_IDGenVBox12" width="250%" height="200%" alignItems="Center">
+                    <Image id="_IDGenImage14"
+                        src="https://store.royalenfield.com/media/mageplaza/bannerslider/banner/image/n/e/new_user_ragestration_page_1500_x_950_150_kb_1_.jpg"
+                        width="100%"
+                        alt="Registration Page Image"
+                    />
+                </VBox>
+
+                <!-- Form Section -->
+                <VBox id="_IDGenVBox13" width="50%">
+                    <f:SimpleForm id="customerForm"
+                        title="{i18n>SetupNewAccount}"
+                        layout="ResponsiveGridLayout"
+                        labelSpanXL="3"
+                        labelSpanL="3"
+                        labelSpanM="3"
+                        labelSpanS="12"
+                        adjustLabelSpan="false">
+                        <f:content>
+                            <Label id="_IDGenLabel6" text="{i18n>firstName}" required="true" />
+                            <Input id="firstName" change="onFirstNameChange"
+                                placeholder="{i18n>EnterFirstName}" />
+
+                            <Label id="_IDGenLabel7" text="{i18n>lastName}" required="true" />
+                            <Input id="lastName" change="onFirstNameChange"
+                                placeholder="{i18n>EnterLastName}" />
+
+                            <Label id="_IDGenLabel8" text="{i18n>email}" required="true" />
+                            <Input id="email" placeholder="{i18n>EnterEmail}" type="Email" />
+
+                            <Label id="_IDGenLabel9" text="{i18n>MobileNumber}" required="true" />
+                            <Input id="mobileNumber" change="onMobileNumberChange"
+                                placeholder="{i18n>EnterMobileNumber}"
+                                type="Tel" />
+
+                            <Label id="_IDGenLabel10" text="{i18n>DateOfBirth}" required="true" />
+
+                            <DatePicker id="dob" placeholder="{i18n>SelectDateOfBirth}" />
+
+                            <Label id="_IDGenLabel11" text="{i18n>Gender}" required="true" />
+                            <Select id="gender" placeholder="{i18n>SelectGender}">
+                                <core:Item id="_IDGenItem" key="male" text="{i18n>Male}" />
+                                <core:Item id="_IDGenItem20" key="female" text="{i18n>Female}" />
+                                <core:Item id="_IDGenItem21" key="other" text="{i18n>Other}" />
+                            </Select>
+
+                            <Label id="_IDGenLabel12" text="{i18n>Password}" required="true" />
+                            <VBox>
+                                <HBox class="customerTogglePassword">
+                                    <Input id="password"
+                                        type="Password"
+                                        placeholder="{i18n>EnterPassword}"
+                                        change="onPasswordChange"
+                                        value="{password}"
+                                        width="225%" />
+                                        <HBox class="customerTogglePasswordInput">
+                                    <Button id="togglePasswordVisibility"
+                                        icon="sap-icon://show"
+                                        tooltip="Show/Hide Password"
+                                        press="onTogglePasswordVisibility" />
+                                        </HBox>
+                                </HBox>
+                            </VBox>
+
+
+                            <CheckBox id="agreeTerms"
+                                text="{i18n>IAcceptTheTermsAndConditionsAsWellAsPrivacyPolicy.}" />
+
+                            <Button id="saveButton" text="{i18n>CREATEACCOUNT}" press="onSave"
+                                type="Success" icon="sap-icon://accept" />
+                        </f:content>
+                    </f:SimpleForm>
+                </VBox>
+            </FlexBox>
+        </content>
+        <footer>
+            <!-- footer page logo -->
+            <Bar id="_IDGenBar">
+                <!-- <contentRight>
+                    <Button id="saveButton" text="CREATE ACCOUNT" press="onSave" type="Success"
+                icon="sap-icon://accept" />
+                </contentRight> -->
+                <contentLeft>
+                    <VBox id="_IDGenVBox14" alignItems="Center" justifyContent="Center" width="100%"
+                        height="100%">
+                        <Image id="_IDGenImage15"
+                            src="https://store.royalenfield.com/media/wysiwyg/No_Cost_EMI.png"
+                            alt="No Cost EMI"
+                            press="onShowNoCostEMIPopup"
+                            width="50px" height="50px" />
+                    </VBox>
+                </contentLeft>
+
+                <contentRight>
+                    <VBox id="_IDGenVBox15" alignItems="Center" justifyContent="Center" width="100%">
+                        <Image id="_IDGenImage16"
+                            src="https://store.royalenfield.com/media/wysiwyg/First_time_Buyer.png"
+                            alt="First Time Buyer"
+                            press="onShowFirstTimeBuyerPopup"
+                            width="50px" height="50px" />
+
+                    </VBox>
+                </contentRight>
+
+            </Bar>
+        </footer>
+
+        <!-- Dialogs for Popups -->
+        <Dialog id="noCostEMIDialog" stretch="false" contentWidth="70%" contentHeight="50%">
+            <customHeader>
+                <Bar id="_IDGenBar2">
+                    <contentMiddle>
+                        <Title id="_IDGenTitle5" text="No Cost EMI" />
+                    </contentMiddle>
+                    <contentRight>
+                        <!-- Close button -->
+                        <Button id="_IDGenButton4" icon="sap-icon://decline" press="onClosePopupEmi"
+                            tooltip="Close" />
+                    </contentRight>
+                </Bar>
+            </customHeader>
+            <content>
+                <VBox id="_IDGenVBox16" class="sapUiSmallMargin">
+                    <Text id="_IDGenText" text="No Cost EMI Offer Details"
+                        class="boldText sapUiSmallMarginBottom" />
+
+                    <Text id="_IDGenText19"
+                        text="1. Under this offer, customers will be eligible for extra discounts on EMI transactions for purchases made on the Royal Enfield platform. These customers will be able to view the offer on the payment page. This offer will not be applicable for any other types of transactions."
+                        class="sapUiSmallMarginBottom" />
+
+                    <Text id="_IDGenText20"
+                        text="• The offer is valid for a cart value of Rs 3000/- or above."
+                        class="sapUiSmallMarginBottom" />
+                    <Text id="_IDGenText21"
+                        text="• Cancellation of individual items will cancel all other items this offer is applied on."
+                        class="sapUiSmallMarginBottom" />
+                    <Text id="_IDGenText22"
+                        text="• Returns/replacement is allowed as per the Returns Policy."
+                        class="sapUiSmallMarginBottom" />
+                    <Text id="_IDGenText23"
+                        text="• Replacement is allowed in case of damaged or defective items only."
+                        class="sapUiSmallMarginBottom" />
+
+                    <Text id="_IDGenText24"
+                        text="2. The offer will be applicable only on Credit Card EMI transactions for a tenure of 3 or 6 months."
+                        class="sapUiSmallMarginBottom" />
+                    <Text id="_IDGenText25"
+                        text="3. Any person availing this offer shall be deemed to have accepted these terms and conditions." />
+                </VBox>
+            </content>
+            <endButton>
+                <Button id="_IDGenButton5" text="Continue" press="onClosePopup" />
+            </endButton>
+        </Dialog>
+
+
+        <Dialog id="firstTimeBuyerDialog" stretch="false" contentWidth="70%" contentHeight="50%">
+            <customHeader>
+                <Bar id="_IDGenBar3">
+                    <contentMiddle>
+                        <Title id="_IDGenTitle6" text="First Time Buyer" />
+                    </contentMiddle>
+                    <contentRight>
+                        <!-- Close button -->
+                        <Button id="_IDGenButton6" icon="sap-icon://decline"
+                            press="onClosePopupFirstTimeBuyer" tooltip="Close" />
+                    </contentRight>
+                </Bar>
+            </customHeader>
+            <content>
+                <VBox id="_IDGenVBox17" class="sapUiSmallMargin">
+
+                    <Text id="_IDGenText26"
+                        text="1. First-time buyer to get a 10% discount on the MRP for first-time purchase when the order value is over Rs.1500."
+                        class="sapUiSmallMarginBottom" />
+
+                    <Text id="_IDGenText27" text="2. Discount capped at Max Rs. 500."
+                        class="sapUiSmallMarginBottom" />
+                    <Text id="_IDGenText28"
+                        text="3. The scheme is applicable only for new customers i.e. the customers who have not previously registered their mobile number or email does with us and are not mentioned in our existing Online Store buyer database."
+                        class="sapUiSmallMarginBottom" />
+                    <Text id="_IDGenText29"
+                        text="4. This scheme cannot be clubbed with any other scheme."
+                        class="sapUiSmallMarginBottom" />
+                    <Text id="_IDGenText31"
+                        text="5. Minimum cart value needs to be Rs.1500 or above."
+                        class="sapUiSmallMarginBottom" />
+
+                    <Text id="_IDGenText32" text="6. Use Code: NEW10 to avail of this offer"
+                        class="sapUiSmallMarginBottom" />
+
+                </VBox>
+            </content>
+            <endButton>
+                <Button id="_IDGenButton7" text="Continue" press="onClosePopup" />
+            </endButton>
+        </Dialog>
+
+        <footer>
+            <OverflowToolbar>
+                <ToolbarSpacer />
+                <Button
+                    class="chatusicon"
+                    icon="img/chatus.png"
+                    press="handleMessagePopoverPress"
+                />
+            </OverflowToolbar>
+        </footer>
+    </Page>
+</mvc:View>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Royal Enfield Application</title>
+    <link rel="shortcut icon" href=".\img\favicon.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <style>
+        html, body, body > div, #container, #container-uiarea {
+            height: 100%;
+        }
+    </style>
+    <script
+        id="sap-ui-bootstrap"
+        src="resources/sap-ui-core.js"
+        data-sap-ui-theme="sap_horizon"
+        data-sap-ui-resourceroots='{
+            "ns.royalenfield": "./"
+        }'
+        data-sap-ui-oninit="module:sap/ui/core/ComponentSupport"
+        data-sap-ui-compatVersion="edge"
+        data-sap-ui-async="true"
+        data-sap-ui-frameOptions="trusted"
+    ></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDrEcyLn6nDxyB1viH_ToFpTtkgLjZLHso&libraries=places" type ="text/javascript"> 
+    </script>
+  <script src="https://public.tableau.com/javascripts/api/tableau-2.9.1.min.js"></script>
+
+ 
+
+    <style>
+    .myMap {
+    height: 100%;
+    width: 100%  ;
+    }
+    </style>
+</head>
+<body class="sapUiBody sapUiSizeCompact" id="content">
+    <div
+        data-sap-ui-component
+        data-name="ns.royalenfield"
+        data-id="container"
+        data-settings='{"id" : "ns.royalenfield"}'
+        data-handle-validation="true"
+    ></div>
+    
+</body>
+</html>

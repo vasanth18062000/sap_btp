@@ -1,0 +1,225 @@
+<mvc:View xmlns:core="sap.ui.core"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:f="sap.ui.layout.form"
+    controllerName="ns.royalenfield.controller.REFinance">
+    <Page id="_IDGenPage1" title="Royal Enfield" showHeader="true" class="financepage">
+        <customHeader>
+        <OverflowToolbar id="_IDGenOverflowToolbar1">
+            <Bar id="_IDGenBar4">
+                <contentLeft>
+                    <Button id="_IDGenButton8" press=".onbackToTile" text="Back" type="Emphasized" class="button1"
+                        icon="sap-icon://nav-back" />
+                    <Image id="_IDGenImage17"
+                        src="{i18n>RELogo}"
+                        alt="Royal Enfield Logo"
+                        width="70%" height="90%" />
+                    <!-- <Text id="_IDGenText33" text="{i18n>faq}" /> -->
+                </contentLeft>
+                <contentMiddle>
+                <Title text="{i18n>FinanceScheme}" class="customHeaderTitle" />
+
+            </contentMiddle>
+                <contentRight>
+                    <Image id="_IDGenImage" src="{i18n>LaderaLogo}" width="100%" height="300%" />
+                </contentRight>
+            </Bar>
+            
+        </OverflowToolbar>
+        </customHeader>
+        <content>
+            <HBox id="_IDGenHBox6" class="sapUiSmallMargin">
+                <!-- Left Image -->
+                <VBox id="_IDGenVBox19" class="sapUiSmallMargin" width="70%">
+                    <Image id="_IDGenImage18"
+                        src="{i18n>financebike1}"
+                        alt="Royal Enfield Logo"
+                        width="100%" height="100%" />
+                </VBox>
+
+                <!-- Right Image -->
+                <VBox id="_IDGenVBox20" class="sapUiSmallMargin" width="60%">
+                    <Image id="_IDGenImage19"
+                        src="{i18n>financebike2}"
+                        alt="Royal Enfield Logo"
+                        width="100%" height="100%" />
+                </VBox>
+            </HBox>
+        </content>
+        <content>
+            <VBox id="_IDGenVBox21" class="">
+                <Image id="_IDGenImage20"
+                    src="{i18n>financepage}"
+                    alt="Royal Enfield Logo"
+                    width="100%" height="100%" />
+            </VBox>
+        </content>
+        <content>
+            <VBox id="_IDGenVBox22" class="financebg">
+                <Panel id="_IDGenPanel4" headerText="{i18n>efb3}" expandable="true" expanded="false">
+                    <Image id="_IDGenImage21" src="{i18n>int}" alt="Loan Details" width="20%" />
+                    <Text id="_IDGenText2" text="{i18n>BikePrice} (₹) : 230000" />
+                    <VBox id="_IDGenVBox42" class="formSection">
+                        <Label id="_IDGenLabel41" text="{i18n>LoanAmount}" />
+                        <Input id="loanamountInput_Bullet350"
+                        placeholder=" {i18n>EnterYourLoanAmount}" type="Number"
+                        class="inputField" />
+
+                    <Label id="_IDGenLabel42" text="{i18n>Tenure} ({i18n>Month})" />
+                    <Select id="loantenure_Bullet350" class="inputField">
+                        <items>
+                            <core:Item id="_IDGenItem27" key="12" text="12 {i18n>Month}" />
+                            <core:Item id="_IDGenItem28" key="24" text="24 {i18n>Month}" />
+                            <core:Item id="_IDGenItem29" key="36" text="36 {i18n>Month}" />
+                            <core:Item id="_IDGenItem30" key="48" text="48 {i18n>Month}" />
+                            <core:Item id="_IDGenItem31" key="60" text="60 {i18n>Month}" />
+                            <core:Item id="_IDGenItem32" key="72" text="72 {i18n>Month}" />
+                        </items>
+                    </Select>
+                    <Label id="_IDGenLabel43" text="{i18n>LoanPercentage}" />
+                    <Select id="loanPercentage_Bullet350" class="inputField">
+                        <items>
+                            <core:Item id="_IDGenItem33" key="7" text="7.5%" />
+                            <core:Item id="_IDGenItem34" key="8" text="8.5%" />
+                            <core:Item id="_IDGenItem35" key="9" text="9.5%" />
+                            <core:Item id="_IDGenItem36" key="10" text="10.5%" />
+                            <core:Item id="_IDGenItem37" key="11" text="11.5%" />
+                            <core:Item id="_IDGenItem38" key="12" text="12.5%" />
+                        </items>
+                    </Select>
+                    <Button id="_IDGenButton10" text="{i18n>CalculateEmi}" type="Emphasized"
+                        press="onCalculateEMI_Bullet350" class="sendButton" />
+                    </VBox>
+                </Panel>
+                <Panel id="_IDGenPanel5" headerText="{i18n>efh}" expandable="true" expanded="false">
+                    <VBox id="_IDGenVBox43" class="sapUiSmallMargin">
+                        <Image id="_IDGenImage22" src="{i18n>him}" alt="Loan Details" width="20%" />
+                        <Text id="_IDGenText3" text="{i18n>BikePrice} (₹) : 400000" />
+                        <VBox id="_IDGenVBox44" class="formSection">
+                            <Label id="_IDGenLabel44" text="{i18n>LoanAmount}" />
+                            <Input id="loanamountInput_Himalayan"
+                                placeholder="{i18n>EnterYourLoanAmount}" type="Number"
+                                class="inputField" />
+
+                            <Label id="_IDGenLabel45" text="{i18n>Tenure} ({i18n>Month})" />
+                            <Select id="loantenure_Himalayan" class="inputField">
+                                <items>
+                                    <core:Item id="_IDGenItem39" key="12" text="12 {i18n>Month}" />
+                                    <core:Item id="_IDGenItem40" key="24" text="24 {i18n>Month}" />
+                                    <core:Item id="_IDGenItem41" key="36" text="36 {i18n>Month}" />
+                                    <core:Item id="_IDGenItem42" key="48" text="48 {i18n>Month}" />
+                                    <core:Item id="_IDGenItem43" key="60" text="60 {i18n>Month}" />
+                                    <core:Item id="_IDGenItem44" key="72" text="72 {i18n>Month}" />
+                                </items>
+                            </Select>
+
+                            <Label id="_IDGenLabel46" text="{i18n>LoanPercentage}" />
+                            <Select id="loanPercentage_Himalayan" class="inputField">
+                                <items>
+                                    <core:Item id="_IDGenItem45" key="7" text="7.5%" />
+                                    <core:Item id="_IDGenItem46" key="8" text="8.5%" />
+                                    <core:Item id="_IDGenItem47" key="9" text="9.5%" />
+                                    <core:Item id="_IDGenItem48" key="10" text="10.5%" />
+                                    <core:Item id="_IDGenItem49" key="11" text="11.5%" />
+                                    <core:Item id="_IDGenItem50" key="12" text="12.5%" />
+                                </items>
+                            </Select>
+                            <Button id="_IDGenButton11" text="{i18n>CalculateEmi}" type="Emphasized"
+                                press="onCalculateEMI_Himalayan" class="sendButton" />
+                        </VBox>
+                    </VBox>
+                </Panel>
+                <Panel id="_IDGenPanel6" headerText="{i18n>efs4}" expandable="true" expanded="false">
+                    <VBox id="_IDGenVBox45" class="sapUiSmallMargin">
+                        <Image id="_IDGenImage23" src="{i18n>him}" alt="Loan Details" width="20%" />
+                        <Text id="_IDGenText34" text="{i18n>BikePrice} (₹) : 450000" />
+                        <VBox id="_IDGenVBox46" class="formSection">
+                            <Label id="_IDGenLabel47" text="{i18n>LoanAmount}" />
+                            <Input id="loanamountInput_Scram"
+                                placeholder="{i18n>EnterYourLoanAmount}" type="Number"
+                                class="inputField" />
+
+                            <Label id="_IDGenLabel48" text="{i18n>Tenure} ({i18n>Month})" />
+                            <Select id="loantenure_Scram" class="inputField">
+                                <items>
+                                    <core:Item id="_IDGenItem51" key="12" text="12 {i18n>Month}" />
+                                    <core:Item id="_IDGenItem52" key="24" text="24 {i18n>Month}" />
+                                    <core:Item id="_IDGenItem53" key="36" text="36 {i18n>Month}" />
+                                    <core:Item id="_IDGenItem54" key="48" text="48 {i18n>Month}" />
+                                    <core:Item id="_IDGenItem55" key="60" text="60 {i18n>Month}" />
+                                    <core:Item id="_IDGenItem56" key="72" text="72 {i18n>Month}" />
+                                </items>
+                            </Select>
+
+                            <Label id="_IDGenLabel49" text="{i18n>LoanPercentage}" />
+                            <Select id="loanPercentage_Scram" class="inputField">
+                                <items>
+                                    <core:Item id="_IDGenItem57" key="7" text="7.5%" />
+                                    <core:Item id="_IDGenItem58" key="8" text="8.5%" />
+                                    <core:Item id="_IDGenItem59" key="9" text="9.5%" />
+                                    <core:Item id="_IDGenItem60" key="10" text="10.5%" />
+                                    <core:Item id="_IDGenItem61" key="11" text="11.5%" />
+                                    <core:Item id="_IDGenItem62" key="12" text="12.5%" />
+                                </items>
+                            </Select>
+                            <Button id="_IDGenButton12" text="{i18n>CalculateEmi}" type="Emphasized"
+                                press="onCalculateEMI_Scram" class="sendButton" />
+                        </VBox>
+                    </VBox>
+                </Panel>
+            </VBox>
+        </content>
+        <content>
+            <Text id="_IDGenText62" text="{i18n>fydt}" class="headerText" />
+                <VBox id="_IDGenVBox30" class="contactUsVBox">
+                    <!-- Form Section -->
+                    <VBox id="_IDGenVBox31" class="formSection">
+                        <Label id="_IDGenLabel5" text="{i18n>fullName}" labelFor="nameInput" />
+                        <Input id="nameInput" placeholder="{i18n>EnterYourName}" class="inputField" />
+    
+                        
+    
+                        <Label id="_IDGenLabel14" text="{i18n>emailad}" labelFor="emailInput" />
+                        <Input id="emailidInput" placeholder="{i18n>EnterYourEmailAddress}" type="text"
+                            class="inputField" />
+    
+                        <Label id="_IDGenLabel15" text="{i18n>PhoneNumber}" labelFor="emailInput" />
+                        <Input id="mobileNumberInput" placeholder="{i18n>EnterYourPhoneNumber}"
+                            type="Number"
+                            class="inputField" />
+                        
+                            <Label id="_IDGenLabel16" text="{i18n>city}" labelFor="cityInput" />
+                            <Input id="cityInput" placeholder="{i18n>enterYourCity}"
+                                class="inputField" />
+                        <Label id="_IDGenLabel17" text="{i18n>intrested}" labelFor="test" />
+                        <RadioButtonGroup id="_IDGenRadioButtonGroup">
+                            <RadioButton id="_IDGenRadioButton" text="{i18n>Yes}" />
+                            <RadioButton id="_IDGenRadioButton1" text="{i18n>No}" />
+                        </RadioButtonGroup>
+                        <Text id="_IDGenText63" class="disclaimer" text="{i18n>disc}" />
+                        <!-- Submit Button -->
+                        <Button id="_IDGenButton16" text="{i18n>Submit}" type="Emphasized" press=".onSubmit" class="sendButton" />
+                    </VBox>
+                </VBox>
+        </content>
+        <content>
+            <VBox id="_IDGenVBox32" class="sapUiSmallMargin">
+                <Image id="_IDGenImage28"
+                    src="{i18n>financepartner}"
+                    alt="Royal Enfield Logo"
+                    width="100%" height="100%" />
+            </VBox>
+        </content>
+        
+        <footer>
+            <OverflowToolbar id="_IDGenOverflowToolbar2">
+                <ToolbarSpacer id="_IDGenToolbarSpacer3" />
+                <Button id="_IDGenButton13"
+                    class="chatusicon"
+                    icon="img/chatus.png" 
+                press="handleMessagePopoverPress"
+                />
+            </OverflowToolbar>
+        </footer>
+    </Page>
+</mvc:View>

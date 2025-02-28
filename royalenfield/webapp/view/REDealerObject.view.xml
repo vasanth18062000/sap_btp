@@ -1,0 +1,122 @@
+<mvc:View
+    controllerName="ns.royalenfield.controller.REDealerObject"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:layout="sap.uxap">
+    
+    <Page>
+        <!-- Custom Header -->
+        <customHeader>
+            <OverflowToolbar id="_IDGenOverflowToolbar1">
+                <Bar id="_IDGenBar1">
+                    <contentLeft>
+                        <Button press=".onbackToAboutDealer" text="Back" type="Emphasized" class="button1" icon="sap-icon://nav-back"/>
+                        <Image id="_IDGenImage1" src="{i18n>RELogo}" width="70%" height="90%" />
+                    </contentLeft>
+					<contentMiddle>
+                <Title text="{i18n>DOD}" class="customHeaderTitle" />
+
+            </contentMiddle>
+
+                    <contentRight>
+                        <Image id="_IDGenImage2" src="{i18n>LaderaLogo}" width="100%" height="300%" />
+                    </contentRight>
+                </Bar>
+            </OverflowToolbar>
+        </customHeader>
+
+        <!-- Content -->
+        <content>
+            <layout:ObjectPageLayout
+                id="objectPageLayouts"
+                headerTitle="Object Page Header"
+                showFooter="true">
+                
+                <!-- Header Title -->
+                <layout:headerTitle>
+				
+                    <layout:ObjectPageHeader
+                        objectTitle="{dealer>/name}"
+                        isObjectTitleAlwaysVisible="true"
+                        showPlaceholder="false">
+                        
+                        <!-- Header Actions -->
+                    
+                    </layout:ObjectPageHeader>
+                </layout:headerTitle>
+
+                <!-- Sections -->
+                <layout:sections>
+                    <!-- General Information Section -->
+                    <layout:ObjectPageSection title="{i18n>GeneralInformation}">
+                        <layout:subSections>
+                            <layout:ObjectPageSubSection>
+                                <layout:blocks>
+                                    <VBox>
+                                        <Label text="{i18n>Name}:" class="bigfont"/>
+                                        <Text text="{dealer>/name}" class="smallfont" />
+                                        </VBox>
+										<VBox>
+                                        <Label text="{i18n>companyName}:" class="bigfont" />
+                                        <Text text="{dealer>/companyName}" class="smallfont"/>
+                                
+                                    </VBox>
+                                </layout:blocks>
+                            </layout:ObjectPageSubSection>
+                        </layout:subSections>
+                    </layout:ObjectPageSection>
+
+                    <!-- Contact Information Section -->
+                    <layout:ObjectPageSection title="{i18n>ContactInformation}">
+                        <layout:subSections>
+                            <layout:ObjectPageSubSection>
+                                <layout:blocks>
+                                    <VBox>
+                                        <Label text="{i18n>email}:" class="bigfont" />
+                                        <Text text="{dealer>/emailId}" class="smallfont"/>
+                                      </VBox>  
+									  <VBox>
+                                        <Label text="{i18n>Phone}:" class="bigfont" />
+                                        <Text text="{dealer>/mobileNumber}" class="smallfont" />
+                                    </VBox>
+                                </layout:blocks>
+                            </layout:ObjectPageSubSection>
+                        </layout:subSections>
+                    </layout:ObjectPageSection>
+
+                    <!-- Additional Section -->
+                    <layout:ObjectPageSection title="{i18n>Address}">
+                        <layout:subSections>
+                            <layout:ObjectPageSubSection>
+                                <layout:blocks>
+                                    <VBox>
+                                        <Label text="{i18n>city}:" class="bigfont" />
+                                        <Text text="{dealer>/city}" class="smallfont"/>
+                                        <Label text="{i18n>State}:" class="bigfont" />
+                                        <Text text="{dealer>/state}" class="smallfont"/>
+										</VBox>
+										<VBox>
+                                        <Label text="{i18n>Country}:" class="bigfont" />
+                                        <Text text="{dealer>/country}" class="smallfont"/>
+                                        <Label text="{i18n>pincode}:" class="bigfont" />
+                                        <Text text="{dealer>/pincode}" class="smallfont"/>
+                               <Image src="{dealer>/fileUploade}" />
+                                    </VBox>
+                                </layout:blocks>
+                            </layout:ObjectPageSubSection>
+                        </layout:subSections>
+                    </layout:ObjectPageSection>
+                </layout:sections>
+            </layout:ObjectPageLayout>
+        </content>
+
+		
+        <footer>
+            <OverflowToolbar>
+                <ToolbarSpacer />
+                <Button text="EXPORT DATA" press=".onDownloadCSV" type="Transparent" icon="sap-icon://download-from-cloud" />
+            </OverflowToolbar>
+        </footer>
+		
+    </Page>
+</mvc:View>

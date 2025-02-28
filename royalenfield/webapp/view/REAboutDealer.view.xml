@@ -1,0 +1,98 @@
+<mvc:View controllerName="ns.royalenfield.controller.REAboutDealer"
+    displayBlock="true"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+        xmlns:smarttable="sap.ui.comp.smarttable"
+  xmlns:smartFilterBar="sap.ui.comp.smartfilterbar"
+    >
+    <Shell id="_IDGenShell4" >
+    <Page
+        id="page"
+        title="DEALER" showNavButton="true" navButtonPress=".navToHome"
+    >
+    <customHeader>
+            <OverflowToolbar id="_IDGenOverflowToolbar11">
+                <Bar id="_IDGenBar11">
+                    <contentLeft>
+                    <Button press=".navToHome" text="Back" type="Emphasized" class="button1" icon="sap-icon://nav-back"/>
+                        <Image id="_IDGenImage11" src="{i18n>RELogo}" width="70%" height="90%" />
+                    </contentLeft>
+                    <contentMiddle>
+                <Title text="{i18n>Dealer}" class="customHeaderTitle" />
+
+            </contentMiddle>
+
+                    <contentRight>
+                        <Image id="_IDGenImage12" src="{i18n>LaderaLogo}" width="100%" height="300%" />
+                    </contentRight>
+                </Bar>
+            </OverflowToolbar>
+        </customHeader>
+    
+        <content>
+    
+            <smartFilterBar:SmartFilterBar
+                id="smartFilterBar" entitySet="Dealer"
+                key="id"
+                
+            >
+                       <!-- enableBasicSearch="true"
+                basicSearchFieldName="name"
+                persistencyKey="UniqueAndStablePersistanceKey" -->
+
+                <smartFilterBar:controlConfiguration>
+                    <!-- <smartFilterBar:ControlConfiguration
+                        id="IDGenColumn1"
+                        visibleInAdvancedArea="true"
+                        label="Customer ID"
+                        key="id"
+                    /> -->
+                    <smartFilterBar:ControlConfiguration
+                        id="CustomerName"
+                        visibleInAdvancedArea="true"
+                        label="{i18n>SearchByCustomer}"
+                        key="name"
+                    />
+                     <smartFilterBar:ControlConfiguration
+                        id="country"
+                        visibleInAdvancedArea="true"
+                        label="{i18n>SearchByCountry}"
+                        key="country"
+                    />
+                    
+                </smartFilterBar:controlConfiguration>
+            </smartFilterBar:SmartFilterBar>
+                 <Bar id="_IDGenBar5" >
+        <contentRight>
+        <Toolbar id="_IDGenToolbar1">
+                            <SearchField id="_IDGenSearchField1"  visible="true" placeholder="{i18n>search}" width="100%" search=".onFilter" />
+                        </Toolbar>
+        </contentRight>
+        </Bar>
+            <smarttable:SmartTable
+                id="idSmarTable"
+                smartFilterId="smartFilterBar"
+                entitySet="Dealer"
+                enableAutoBinding="true"
+                tableType="ResponsiveTable"
+                initiallyVisibleFields="name,companyName,country"
+                
+
+            >
+                <Table 
+                    id="idResponsiveTable"
+                    selectionChange="handleSelectionChange"
+                    mode="SingleSelectMaster"
+                                        growing="true"
+                    growingThreshold="8"
+                    growingDirection="Downwards"
+                    growingTriggerText="Load more..."
+                    
+
+                />
+            </smarttable:SmartTable>
+       
+        </content>
+    </Page>
+</Shell>
+</mvc:View>

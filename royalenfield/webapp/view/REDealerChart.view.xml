@@ -1,0 +1,115 @@
+<mvc:View
+    controllerName="ns.royalenfield.controller.REDealerChart"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:viz="sap.viz.ui5.controls"
+    xmlns:core="sap.ui.core">
+
+    <Page title="Dealer Sales Dashboard">
+        <customHeader>
+            <OverflowToolbar id="_IDGenOverflowToolbar1">
+                <Bar id="_IDGenBar1">
+                    <contentLeft>
+                        <Button press=".onbackToRoyal" text="Back" type="Emphasized" class="button1" icon="sap-icon://nav-back"/>
+                        <Image id="_IDGenImage1" src="{i18n>RELogo}" width="70%" height="90%" />
+                    </contentLeft>
+                    <contentMiddle>
+                        <Title text="{i18n>DealerChart}" class="customHeaderTitle" />
+                    </contentMiddle>
+                    <contentRight>
+                        <Image id="_IDGenImage2" src="{i18n>LaderaLogo}" width="100%" height="300%" />
+                    </contentRight>
+                </Bar>
+            </OverflowToolbar>
+        </customHeader>
+
+        <content>
+            <!-- Dropdown for selecting city -->
+            <VBox>
+                <Text text="{i18n>SelectCity} :" class="customHeaderTitle"/>
+                <Select
+                    id="citySelector"
+                    width="50%"
+                    change="onCityChange"
+                    items="{
+                        path: '/cities',
+                        templateShareable: true
+                    }">
+                    <core:Item
+                        key="{name}"
+                        text="{name}" />
+                </Select>
+            </VBox>
+
+            <!-- Export Button -->
+            <HBox justifyContent="SpaceBetween" class="button-container">
+                <Button text="Export Data" press="onExportData" />
+            </HBox>
+
+            <!-- Charts positioned side by side -->
+            <HBox width="100%" justifyContent="SpaceBetween" class="chart-container">
+                <!-- Bar Chart -->
+                <VBox width="48%">
+                    <Text text="{i18n>BarChart}" class="customHeaderTitle"/>
+                    <viz:VizFrame
+                        id="bikeCitySalesBarChart"
+                        uiConfig="{applicationSet:'fiori'}"
+                        height="500px"
+                        width="100%"
+                        vizType="bar">
+
+                        <viz:dataset>
+                            <viz.data:FlattenedDataset xmlns:viz.data="sap.viz.ui5.data" data="{/sales}">
+                                <viz.data:dimensions>
+                                    <viz.data:DimensionDefinition name="Month" value="{month}" />
+                                    <viz.data:DimensionDefinition name="Bike Name" value="{bikeName}" />
+                                </viz.data:dimensions>
+                                <viz.data:measures>
+                                    <viz.data:MeasureDefinition name="Bike Sales" value="{sales}" />
+                                </viz.data:measures>
+                            </viz.data:FlattenedDataset>
+                        </viz:dataset>
+
+                        <viz:feeds>
+                            <viz.feeds:FeedItem xmlns:viz.feeds="sap.viz.ui5.controls.common.feeds"
+                                uid="valueAxis" type="Measure" values="Bike Sales" />
+                            <viz.feeds:FeedItem xmlns:viz.feeds="sap.viz.ui5.controls.common.feeds"
+                                uid="categoryAxis" type="Dimension" values="Month" />
+                            <viz.feeds:FeedItem xmlns:viz.feeds="sap.viz.ui5.controls.common.feeds"
+                                uid="color" type="Dimension" values="Bike Name" />
+                        </viz:feeds>
+                    </viz:VizFrame>
+                </VBox>
+
+                <!-- Pie Chart -->
+                <VBox width="48%">
+                    <Text text="{i18n>PieChart}" class="customHeaderTitle"/>
+                    <viz:VizFrame
+                        id="pieChart"
+                        width="100%"
+                        height="500px"
+                        vizType="pie">
+
+                        <viz:dataset>
+                            <viz.data:FlattenedDataset xmlns:viz.data="sap.viz.ui5.data" data="{/bikeNamePie}">
+                                <viz.data:dimensions>
+                                    <viz.data:DimensionDefinition name="Bike Name" value="{bikeName}"/>
+                                </viz.data:dimensions>
+                                <viz.data:measures>
+                                    <viz.data:MeasureDefinition name="Sales" value="{sales}"/>
+                                </viz.data:measures>
+                            </viz.data:FlattenedDataset>
+                        </viz:dataset>
+
+                        <viz:feeds>
+                            <viz.feeds:FeedItem xmlns:viz.feeds="sap.viz.ui5.controls.common.feeds"
+                                uid="size" type="Measure" values="Sales"/>
+                            <viz.feeds:FeedItem xmlns:viz.feeds="sap.viz.ui5.controls.common.feeds"
+                                uid="color" type="Dimension" values="Bike Name"/>
+                        </viz:feeds>
+                    </viz:VizFrame>
+                </VBox>
+            </HBox>
+        </content>
+    </Page>
+</mvc:View>

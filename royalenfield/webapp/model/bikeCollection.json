@@ -1,0 +1,76 @@
+{
+    "bikes": [
+        {
+            "title": "Bear 650",
+            "engine": "648cc parallel-twin engine delivering 47 bhp and 52 Nm of torque",
+            "price": "₹3.5 Lakhs (ex-showroom)",
+            "colors": ["Black", "Red", "Silver"]
+        },
+        {
+            "title": "Classic 350",
+            "engine": "349cc single-cylinder, air-cooled engine producing 20.2 bhp and 27 Nm of torque",
+            "price": "₹1.9 Lakhs (ex-showroom)",
+            "colors": ["Matte Black", "Chrome", "Gunmetal Grey", "Dark Green"]
+        },
+        {
+            "title": "Guerrilla 450",
+            "engine": "449cc single-cylinder, liquid-cooled engine delivering 35 bhp and 40 Nm of torque",
+            "price": "₹4.5 Lakhs (ex-showroom)",
+            "colors": ["Matte Army Green", "Stealth Black", "Desert Tan"]
+        },
+        {
+            "title": "Hunter 350",
+            "engine": "349cc air-cooled, single-cylinder engine delivering 20 bhp and 27 Nm of torque",
+            "price": "₹2.0 Lakhs (ex-showroom)",
+            "colors": ["Matte Grey", "Rebel Blue", "Silver", "Black"]
+        },
+        {
+            "title": "Scram 411",
+            "engine": "411cc single-cylinder, air-cooled engine delivering 24.3 bhp and 32 Nm of torque",
+            "price": "₹2.1 Lakhs (ex-showroom)",
+            "colors": ["White Flame", "Silver Spirit", "Blazing Black"]
+        },
+        {
+            "title": "Meteor 350",
+            "engine": "349cc air-cooled, single-cylinder engine producing 20.2 bhp and 27 Nm of torque",
+            "price": "₹2.2 Lakhs (ex-showroom)",
+            "colors": ["Fireball Yellow", "Fireball Red", "Stellar Blue"]
+        },
+        {
+            "title": "Interceptor 650",
+            "engine": "648cc parallel-twin engine delivering 47 bhp and 52 Nm of torque",
+            "price": "₹3.2 Lakhs (ex-showroom)",
+            "colors": ["Mark Three", "Orange Crush", "Ravishing Red"]
+        },
+        {
+            "title": "Continental GT 650",
+            "engine": "648cc parallel-twin engine delivering 47 bhp and 52 Nm of torque",
+            "price": "₹3.3 Lakhs (ex-showroom)",
+            "colors": ["Rockers Red", "Dux Deluxe", "Ventura Storm"]
+        },
+        {
+            "title": "Shotgun 650",
+            "engine": "648cc parallel-twin engine delivering 47 bhp and 52 Nm of torque",
+            "price": "₹3.6 Lakhs (ex-showroom)",
+            "colors": ["Dark Knight", "Stealth Grey", "Bullet Silver"]
+        },
+        {
+            "title": "Himalayan",
+            "engine": "411cc single-cylinder, air-cooled engine delivering 24.3 bhp and 32 Nm of torque",
+            "price": "₹2.15 Lakhs (ex-showroom)",
+            "colors": ["Snow White", "Granite Black", "Lake Blue"]
+        },
+        {
+            "title": "Bullet 350",
+            "engine": "346cc single-cylinder, air-cooled engine producing 19.1 bhp and 28 Nm of torque",
+            "price": "₹1.5 Lakhs (ex-showroom)",
+            "colors": ["Black", "Forest Green", "Royal Red"]
+        },
+        {
+            "title": "Super Meteor 650",
+            "engine": "648cc parallel-twin engine delivering 47 bhp and 52 Nm of torque",
+            "price": "₹4.0 Lakhs (ex-showroom)",
+            "colors": ["Astral Black", "Celestial Blue", "Interstellar Green"]
+        }
+    ]
+}

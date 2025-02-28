@@ -1,0 +1,26 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+    <Dialog
+        id="helpDialog"
+        title="Help"
+        type="Message"
+        stretchOnPhone="true">
+        <content>
+            <VBox>
+                <Text text="How can we assist you? " />
+                <Link text="https://www.royalenfield.com/help"
+                href="https://www.royalenfield.com/help"
+                target="_blank" />
+          <Text text="Email us at:" />
+          <Link text="help@royalenfield.com"
+                href="mailto:help@royalenfield.com" />
+          <Text text="Call us at: 1-800-XXX-1111" />
+            </VBox>
+        </content>
+        <beginButton>
+            <Button
+                text="Close"
+                press=".onCloseHelp"
+            />
+        </beginButton>
+    </Dialog>
+</core:FragmentDefinition>

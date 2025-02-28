@@ -1,0 +1,239 @@
+<mvc:View
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns:unified="sap.ui.unified"
+    controllerName="ns.royalenfield.controller.REWarranty"
+    displayBlock="true"
+    class="backgroundIjmage">
+ 
+    <Page class="dhbhdb" >
+        <customHeader>
+            <OverflowToolbar id="_IDGenOverflowToolbar1">
+                <Bar id="_IDGenBar1">
+                    <contentLeft>
+                            <Button press=".onbackToRoyal" text="Back" type="Emphasized" class="button1" icon="sap-icon://nav-back"/>
+ 
+                        <Image
+                            id="_IDGenmage1"
+                            src="https://www.royalenfield.com/content/dam/royal-enfield/india/logos/logo.svg"
+                            width="70%"
+                            height="90%"
+                            class="logoImage"
+                        />
+                    </contentLeft>
+ 
+                    <contentMiddle>
+                        <Text
+                            id="_IDGenTxt1"
+                            text="{i18n>WarrantyClaim}"
+                            class="customHeaderTitle"
+                        />
+                    </contentMiddle>
+                    <contentRight>
+                        <Image id="_IDGenImage2" src="{i18n>LaderaLogo}" width="100%" height="300%"
+                            class="logoImage" />
+                    </contentRight>
+                </Bar>
+            </OverflowToolbar>
+        </customHeader>
+        <content>
+            <!-- Header -->
+ 
+       
+            <VBox>
+ 
+<Text text="Please fill out the form below :" class="headerTextREWArranty" />
+ 
+            </VBox>
+ 
+            <!-- Form Container -->
+            <VBox class="marginfefe">
+                <!-- First Row -->
+               
+                <HBox>
+               
+                    <VBox class="sapUiSmallMarginEnd" width="50%">
+                        <Input id="firstNamew" change="onFirstNameChange"  placeholder="{i18n>EnterFirstNameWarranty}"
+/>
+                    </VBox>
+                    <VBox width="50%">
+                        <Input id="lastNamew" placeholder="Enter Last Name" />
+                    </VBox>
+                </HBox>
+ 
+                <!-- Second Row -->
+                <HBox>
+                    <VBox class="sapUiSmallMarginEnd" width="50%">
+                        <Input id="emailw" change="onEmailChange" placeholder="{i18n>EnterEmailAddress*}" type="Email" />
+                    </VBox>
+                    <VBox width="50%">
+                        <Input id="phoneNumberw" change="onMobileNumberChange" required="true" placeholder="{i18n>Enter Phone Number*}" type="Tel"/>
+                    </VBox>
+                </HBox>
+ 
+                <!-- Third Row -->
+                <HBox>
+                    <VBox class="sapUiSmallMarginEnd" width="50%">
+                        <Input id="orderId" placeholder="Enter Order ID*"  required="true"/>
+                    </VBox>
+                    <VBox width="50%">
+                        <Select id="selectSources"   width="100%" class="InputLayout" >
+                            <items >
+                                <core:Item text="Select Source" key="12" />
+                                <core:Item text="Online" key="26" />
+                                <core:Item text="Others" key="36" />
+                                <core:Item text="Ofline" key="47" />
+                                <core:Item text="Third Party" key="54" />
+                            </items>
+                        </Select>
+                    </VBox>
+                </HBox>
+ 
+                <!-- Fourth Row -->
+                <VBox>
+                    <TextArea id="issueDescription" placeholder="Enter detailed description"
+                        rows="4" width="100%" class="textarea"/>
+                </VBox>
+ 
+                <!-- File Upload -->
+                <HBox>
+                    <VBox width="50%" class="sapUiSmallMarginEnd">
+                        <unified:FileUploader width="80%" required="true"
+                            id="idFU1"
+                            placeholder="ATTACH INVOICE*"   maximumFilenameLength="30" maximumFileSize="2" multiple="false"
+                            sameFilenameAllowed="false" change="onChangeDPWarrantyInvoice"
+                            fileType="png,jpg,jpeg"
+                            filenameLengthExceed="onFilenameLengthExceed"
+                            fileSizeExceed="on2MBFileSizeExceed" typeMissmatch="onTypeMissmatch"
+                            uploadComplete="onUploadDPComplete" visible="true"
+                            buttonText="BROWSE"
+                        />
+                        <TextArea id="idBase64Area" editable="true"  height="300px" width="500px"
+                            visible="false" />
+                        <Text id="images" class="sapUiSmallMarginBottom size"></Text>
+                    </VBox>
+                    <VBox width="50%" class="sapUiSmallMarginEnd">
+                        <unified:FileUploader width="80%" required="true"
+                            id="idFU2"
+                            placeholder="WarrantyCard*"  maximumFilenameLength="30" maximumFileSize="2" multiple="false"
+                            sameFilenameAllowed="false" change="onChangeDPWarrantyAttchement"
+                            fileType="png,jpg,jpeg"
+                            filenameLengthExceed="onFilenameLengthExceed"
+                            fileSizeExceed="on2MBFileSizeExceed" typeMissmatch="onTypeMissmatch"
+                            uploadComplete="onUploadDPComplete" visible="true"
+                            buttonText="BROWSE"
+                        />
+                        <TextArea id="idBase64Area2" editable="true" height="300px" width="500px"
+                            visible="false" />
+                        <Text id="imagess" class="sapUiSmallMarginBottom size"></Text>
+                    </VBox>
+                </HBox>
+ 
+                <!-- Photo Upload -->
+                <VBox class="sapUiSmallMarginTop">
+                    <Text text="*upload your vehicle photo here:" class="sapUiSmallMarginUploadimageheadder"
+                        style="color: red;" />
+                    <HBox justifyContent="SpaceBetween" class="sapUiSmallMarginTop">
+                        <Panel width="230px" height="120px" class="photoPlaceholder" headerText="">
+                            <VBox alignItems="Center" justifyContent="Center" height="100%">
+                                <unified:FileUploader required="true"
+                                    id="idFU3"
+                                    maximumFilenameLength="30" maximumFileSize="2" multiple="false"
+                                    sameFilenameAllowed="false" change="onChangeDPWarrantyPhoto1"
+                                    fileType="png,jpg,jpeg"
+                                    filenameLengthExceed="onFilenameLengthExceed"
+                                    fileSizeExceed="on2MBFileSizeExceed"
+                                    typeMissmatch="onTypeMissmatch"
+                                    uploadComplete="onUploadDPComplete" visible="true"
+                                    buttonOnly="true" buttonText="Add" icon="sap-icon://add" />
+                                <TextArea id="idBase64Area3" editable="true" height="300px"
+                                    width="500px" visible="false" />
+ 
+                            </VBox>
+                        </Panel>
+                        <Panel width="230px" height="120px" class="photoPlaceholder" headerText="">
+                            <VBox alignItems="Center" justifyContent="Center" height="100%">
+ 
+                                <unified:FileUploader
+                                    id="idFU4"
+                                    maximumFilenameLength="30" maximumFileSize="2" multiple="false"
+                                    sameFilenameAllowed="false" change="onChangeDPWarrantyPhoto2"
+                                    fileType="png,jpg,jpeg"
+                                    filenameLengthExceed="onFilenameLengthExceed"
+                                    fileSizeExceed="on2MBFileSizeExceed"
+                                    typeMissmatch="onTypeMissmatch"
+                                    uploadComplete="onUploadDPComplete" visible="true"
+                                    buttonOnly="true" buttonText="Add" icon="sap-icon://add" />
+                                <TextArea id="idBase64Area4" editable="true" height="300px"
+                                    width="500px" visible="false" />
+                            </VBox>
+                        </Panel>
+                        <Panel width="230px" height="120px" class="photoPlaceholder" headerText="">
+                            <VBox alignItems="Center" justifyContent="Center" height="100%">
+                                <unified:FileUploader
+                                    id="idFU5"
+                                    maximumFilenameLength="30" maximumFileSize="2" multiple="false"
+                                    sameFilenameAllowed="false" change="onChangeDPWarrantyPhoto3"
+                                    fileType="png,jpg,jpeg"
+                                    filenameLengthExceed="onFilenameLengthExceed"
+                                    fileSizeExceed="on2MBFileSizeExceed"
+                                    typeMissmatch="onTypeMissmatch"
+                                    uploadComplete="onUploadDPComplete" visible="true"
+                                    buttonOnly="true" buttonText="Add" icon="sap-icon://add" />
+                                <TextArea id="idBase64Area5" editable="true" height="300px"
+                                    width="500px" visible="false" />
+                            </VBox>
+                        </Panel>
+                        <Panel width="230px" height="120px" class="photoPlaceholder" headerText="">
+                            <VBox alignItems="Center" justifyContent="Center" height="100%">
+                                <unified:FileUploader
+                                    id="idFU6"
+                                    maximumFilenameLength="30" maximumFileSize="2" multiple="false"
+                                    sameFilenameAllowed="false" change="onChangeDPWarrantyPhoto4"
+                                    fileType="png,jpg,jpeg"
+                                    filenameLengthExceed="onFilenameLengthExceed"
+                                    fileSizeExceed="on2MBFileSizeExceed"
+                                    typeMissmatch="onTypeMissmatch"
+                                    uploadComplete="onUploadDPComplete" visible="true"
+                                    buttonOnly="true" buttonText="Add" icon="sap-icon://add" />
+                                <TextArea id="idBase64Area6" editable="true" height="300px"
+                                    width="500px" visible="false" />
+                            </VBox>
+                        </Panel>
+                    </HBox>
+                </VBox>
+ 
+                <!-- Submit Button -->
+                <VBox class="sapUiLargeMarginTop" alignItems="Center">
+                    <Button text="Submit" type="Emphasized" press="onSubmitClaim" class="btClass" />
+                </VBox>
+ 
+ 
+            </VBox>
+ 
+        </content>
+ 
+        <footer>
+            <OverflowToolbar>
+                <ToolbarSpacer />
+                <Button
+                    class="chatusicon"
+                    icon="img/chatus.png"
+                    press="handleMessagePopoverPress"
+                />
+            </OverflowToolbar>
+        </footer>
+ 
+ 
+                        <!-- <OverflowToolbar>
+                        <ToolbarSpacer/>
+                        <Button text="Click to Chat" icon="sap-icon://message-popup" press="handleMessagePopoverPress"/>
+                        </OverflowToolbar>
+                    </footer> -->
+ 
+ 
+   
+ 
+    </Page>
+</mvc:View>

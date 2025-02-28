@@ -1,0 +1,95 @@
+<mvc:View controllerName="ns.royalenfield.controller.REBusinessHub"
+    displayBlock="true"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:smartFilter="sap.ui.comp.smartfilterbar"
+    xmlns:smarttable="sap.ui.comp.smarttable">
+    <Page id="_IDGenPage4" >
+  <customHeader>
+            <OverflowToolbar id="_IDGenOverflowToolbar11">
+                <Bar id="_IDGenBar11">
+                    <contentLeft>
+                    <Button press=".onbackToRoyal" text="Back" type="Emphasized" class="button1" icon="sap-icon://nav-back"/>
+                        <Image id="_IDGenImage11" src="{i18n>RELogo}" width="70%" height="90%" />
+                    </contentLeft>
+                    <contentMiddle>
+                <Title text="{i18n>BusinessHub}" class="customHeaderTitle" />
+ 
+            </contentMiddle>
+ 
+                    <contentRight>
+                        <Image id="_IDGenImage12" src="{i18n>LaderaLogo}" width="100%" height="300%" />
+                    </contentRight>
+                </Bar>
+            </OverflowToolbar>
+        </customHeader>
+ 
+<content>
+        <!-- Smart Filter Bar -->
+            <smartFilter:SmartFilterBar id="smartFilterBar"
+                entitySet="Supplier">
+                <smartFilter:controlConfiguration>
+                    <!-- Search Field for Supplier -->
+                    <smartFilter:ControlConfiguration id="_IDGenControlConfiguration"
+                        key="SupplierFullName"
+                        label="{i18n>SearchBySupplierFullName}"
+                        visibleInAdvancedArea="true"
+                        hasValueHelp="true" />
+                    <!-- Search Field for Account Group -->
+                    <smartFilter:ControlConfiguration id="_IDGenControlConfiguration1"
+                        key="SupplierAccountGroup"
+                        label="{i18n>SearchByAccountGroup}"
+                        visibleInAdvancedArea="true"
+                        hasValueHelp="true" />
+                        <smartFilter:ControlConfiguration id="_IDGenControlConfiguration2"
+                        key="ID"
+                        label="{i18n>Supplier}"
+                        visibleInAdvancedArea="true"
+                        hasValueHelp="true"
+                        />
+                </smartFilter:controlConfiguration>
+            </smartFilter:SmartFilterBar>
+ 
+                <!-- Smart Filter Bar -->
+        <!-- <smartFilter:SmartFilterBar id="smartFilterBar"
+            entitySet="Supplier"
+            smartModelName="SupplierFullName"
+            useToolbar="true"
+            enableBasicSearch="true">
+        </smartFilter:SmartFilterBar> -->
+ 
+ <Bar >
+ <contentRight>
+ <Toolbar >
+                             <SearchField id="_IDGenSearchField1" placeholder="{i18n>search}" width="100%" search=".onFilter" />
+
+ </Toolbar>
+ </contentRight>
+ </Bar>
+        <smarttable:SmartTable
+                id="idSmarTable"
+                smartFilterId="smartFilterBar"
+                entitySet="Supplier"
+                enableAutoBinding="true"
+                tableType="ResponsiveTable"
+                initiallyVisibleFields="ID,SupplierFullName,SupplierAccountGroup,VATRegistration,ConcatenatedInternationalLocNo"
+ 
+            >
+                <Table
+                    id="idResponsiveTable"
+                    selectionChange="handleSelectionChange"
+                    mode="SingleSelectMaster"
+                                        growing="true"
+                    growingThreshold="10"
+                    growingDirection="Downwards"
+                    growingTriggerText="Load more..."
+                   
+ 
+                />
+            </smarttable:SmartTable>
+</content>
+ 
+ 
+ 
+</Page>
+</mvc:View>

@@ -1,0 +1,101 @@
+<mvc:View xmlns:layout="sap.ui.layout" xmlns:core="sap.ui.core"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:f="sap.ui.layout.form"
+    controllerName="ns.royalenfield.controller.REAboutUs">
+    <Page id="aboutUsPage">
+
+<!-- header image -->
+        <customHeader>
+            <OverflowToolbar id="_IDGenOverflowToolbar11">
+                <Bar id="_IDGenBar11">
+                    <contentLeft>
+                    <Button press=".onbackToRoyal" text="Back" type="Emphasized" class="button1" icon="sap-icon://nav-back"/>
+                        <Image id="_IDGenImage11" src="{i18n>RELogo}" width="70%" height="90%" />
+                    </contentLeft>
+                    <contentMiddle>
+                <Title text="{i18n>AboutUs}" class="customHeaderTitle" />
+
+            </contentMiddle>
+
+
+                    <contentRight>
+                        <Image id="_IDGenImage12" src="{i18n>LaderaLogo}" width="100%" height="300%" />
+                    </contentRight>
+                </Bar>
+            </OverflowToolbar>
+        </customHeader>
+
+
+
+        <!-- Page Content -->
+        <content>
+            <!-- 1st image and content (default alignment: text left, image right) -->
+            <layout:Grid defaultSpan="L6 M12 S12" hSpacing="2" class="customGrid">
+                <layout:content>
+                    <VBox class="textSection">
+                        <Title text="{i18n>theEarlyYears}" class="titleStyle" />
+                        <Text text="{i18n>tey}"
+                            class="textStyle" />
+                    </VBox>
+                </layout:content>
+                <layout:content>
+                    <Image src="https://store.royalenfield.com/media/wysiwyg/The_early_years.jpg" class="imageStyle" />
+                </layout:content>
+            </layout:Grid>
+
+            <!-- 2nd image and content (reverse alignment: image left, text right) -->
+            <layout:Grid defaultSpan="L6 M12 S12" hSpacing="2" class="customGrid">
+    <layout:content>
+        <Image src="https://store.royalenfield.com/media/wysiwyg/The_indian_connection.jpg" class="imageStyle" />
+    </layout:content>
+    <layout:content>
+        <VBox class="textSection">
+            <Title text="{i18n>THEINDIANCONNECTION}" class="titleStyle" />
+            <Text text="{i18n>theBritish}"
+                class="textStyle" />
+        </VBox>
+    </layout:content>
+</layout:Grid>
+
+
+            <!-- 3rd image and content (default alignment) -->
+            <layout:Grid defaultSpan="L6 M12 S12" hSpacing="2" class="customGrid">
+                <layout:content>
+                    <VBox class="textSection">
+                        <Title text="{i18n>thePersuit}" class="titleStyle" />
+                        <Text text="{i18n>theForty}"
+                            class="textStyle" />
+                    </VBox>
+                </layout:content>
+                <layout:content>
+                    <Image src="https://store.royalenfield.com/media/wysiwyg/The_pursuit_of_exploration.jpg" class="imageStyle" />
+                </layout:content>
+            </layout:Grid>
+
+            <!-- 4th image and content (reverse alignment: image left, text right) -->
+            <layout:Grid defaultSpan="L6 M12 S12" hSpacing="2" class="customGrid">
+    <layout:content>
+        <Image src="https://store.royalenfield.com/media/wysiwyg/Inspired_by_a_motorcycling_way_of_life.jpg" class="imageStyle" />
+    </layout:content>
+    <layout:content>
+        <VBox class="textSection">
+            <Title text="{i18n>inspiredb}" class="titleStyle" />
+            <Text text="{i18n>wfre}"
+                class="textStyle" />
+        </VBox>
+    </layout:content>
+</layout:Grid>
+        </content>
+        <footer>
+            <OverflowToolbar>
+                <ToolbarSpacer />
+                <Button
+                    class="chatusicon"
+                    icon="img/chatus.png" 
+                press="handleMessagePopoverPress"
+                />
+            </OverflowToolbar>
+        </footer>
+    </Page>
+</mvc:View>

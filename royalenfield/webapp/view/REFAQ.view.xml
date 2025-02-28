@@ -1,0 +1,155 @@
+<mvc:View
+    controllerName="ns.royalenfield.controller.REFAQ"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+    <Page id="_IDGenPage2" class="faqpage">
+     
+        <customHeader>
+            <Bar id="_IDGenBar6">
+                <contentLeft>
+                    <Button id="_IDGenButton2" press=".onbackToTile" text="Back" type="Emphasized" class="button1" icon="sap-icon://nav-back"/>
+                    <Image id="_IDGenImage8" 
+                        src="{i18n>RELogo}"
+                        alt="Royal Enfield Logo" 
+                        width="80%" height="100%" />
+                        <!-- <Text text="{i18n>faq}" /> -->
+                </contentLeft>
+                 <contentRight>
+                    <Image id="_IDGenImage2" src="{i18n>LaderaLogo}" width="100%" height="400%" />
+                </contentRight>
+            </Bar>
+        </customHeader>
+
+        <!-- Content Section -->
+        <content>
+            <HBox id="_IDGenHBox7">
+                <!-- Categories Section -->
+                <VBox id="_IDGenVBox8" class="categoriesSection">
+                    <Text id="_IDGenText10" text="{i18n>Categories}" class="categoryHeader" />
+                    <List id="_IDGenList">
+                        <StandardListItem id="_IDGenStandardListItem" title="{i18n>PickACategory}" type="Inactive" />
+                        <StandardListItem id="_IDGenStandardListItem1" title="{i18n>Motorcycles}" type="Navigation"
+                            press=".onSelectMotorCycle" />
+                        <StandardListItem id="_IDGenStandardListItem2" title="{i18n>Safety}" type="Navigation" press=".onSelectSafety" />
+                        <StandardListItem id="_IDGenStandardListItem3" title="{i18n>CustomerService}" type="Navigation"
+                            press=".onSelectCustomerService" />
+                        <StandardListItem id="_IDGenStandardListItem4" title="{i18n>General}" type="Navigation"
+                            press=".onCategorySelect" />
+                    </List>
+                </VBox>
+
+                <!-- FAQ Section (Dynamic) -->
+                <VBox id="faqSection" class="faqSection">
+                    <!-- Motorcycles FAQ (Initially hidden) -->
+                    <VBox id="motorcycleFaq" visible="false">
+                        <Text id="_IDGenText16" text=" {i18n>Motorcycles} " class="faqHeader" />
+                        <Panel id="_IDGenPanel" expandable="true" expanded="false"
+                            headerText="{i18n>wrem}">
+                            <Text id="_IDGenText17"
+                                text="{i18n>omdi}" />
+                        </Panel>
+                        <Panel id="_IDGenPanel1" expandable="true" expanded="false"
+                            headerText="{i18n>wcib}">
+                            <Text id="_IDGenText18"
+                                text="{i18n>atw}" />
+                        </Panel>
+                        <Panel id="_IDGenPanel2" expandable="true" expanded="false"
+                            headerText="{i18n>witf}">
+                            <Text id="_IDGenText43"
+                                text="{i18n>tfno}" />
+                        </Panel>
+                        <Panel id="_IDGenPanel3" expandable="true" expanded="false"
+                            headerText="{i18n>wite}">
+                            <Text id="_IDGenText44"
+                                text="{i18n>teno}" />
+                        </Panel>
+                    </VBox>
+
+                    <!-- Safety FAQ (Initially hidden) -->
+                    <VBox id="safetyFaq" visible="false">
+                        <Text id="_IDGenText45" text="{i18n>saf}" class="faqHeader" />
+                        <Panel id="_IDGenPanel7" expandable="true" expanded="false"
+                            headerText="{i18n>wdtw}">
+                            <Text id="_IDGenText46"
+                                text="{i18n>twsi}" />
+                        </Panel>
+                        <Panel id="_IDGenPanel8" expandable="true" expanded="false"
+                            headerText="{i18n>hlci}">
+                            <Text id="_IDGenText47"
+                                text="{i18n>wrty}" />
+                        </Panel>
+                        <Panel id="_IDGenPanel9" expandable="true" expanded="false"
+                            headerText="{i18n>watc}">
+                            <Text id="_IDGenText48"
+                                text="{i18n>cftp}" />
+                        </Panel>
+                        <Panel id="_IDGenPanel10" expandable="true" expanded="false"
+                            headerText="{i18n>witft}">
+                            <Text id="_IDGenText49"
+                                text="{i18n>wrtyd}" />
+                        </Panel>
+                    </VBox>
+
+                    <!-- Customer Service FAQ (Initially hidden) -->
+                    <VBox id="customerServiceFaq" visible="false">
+                        <Text id="_IDGenText50" text="{i18n>CustomerService}" class="faqHeader" />
+                        <Panel id="_IDGenPanel11" expandable="true" expanded="false"
+                            headerText="{i18n>itac}">
+                            <Text id="_IDGenText51"
+                                text="{i18n>frar}" />
+                        </Panel>
+                    </VBox>
+
+                    <!-- General FAQ (Initially visible) -->
+                    <VBox id="generalFaq" visible="true">
+                        <Text id="_IDGenText52" text="{i18n>General}" class="faqHeader" />
+                        <Panel id="_IDGenPanel12" expandable="true" expanded="false"
+                            headerText="{i18n>wwre}">
+                            <Text id="_IDGenText53"
+                                text="{i18n>tecc}" />
+                        </Panel>
+                        <Panel id="_IDGenPanel13" expandable="true" expanded="false"
+                            headerText="{i18n>ware}">
+                            <Text id="_IDGenText54"
+                                text="{i18n>trep}" />
+                        </Panel>
+                    </VBox>
+                </VBox>
+            </HBox>
+
+            <!-- Footer Section -->
+            <VBox id="_IDGenVBox9" class="footerSectionfaq">
+                <!-- Static Contact Info Section -->
+                <VBox id="_IDGenVBox10" class="contactInfoSectionfaq">
+                    <Text id="_IDGenText55" text="{i18n>reau}" class="contactText" />
+                    <Text id="_IDGenText56" text="{i18n>p9i}" class="contactText" />
+                    <Text id="_IDGenText57" text="{i18n>gh1i}" class="contactText" />
+                    <Text id="_IDGenText58"
+                        text="{i18n>ph10}"
+                        class="contactText" />
+                    <Text id="_IDGenText59" text="{i18n>esr}" class="contactText" />
+                </VBox>
+
+                <!-- Social Media Section -->
+                <HBox id="_IDGenHBox8" class="socialMedia">
+                    <Button id="_IDGenButton3" icon="img/facebook.png" tooltip="Facebook" press="onFacebookPress" />
+                    <Button id="_IDGenButton9" icon="img/twitter.png" tooltip="Twitter" press="onTwitterPress" />
+                    <Button id="_IDGenButton14" icon="img/instagram.png" tooltip="Instagram" press="onInstagramPress" />
+                    <Button id="_IDGenButton15" icon="img/youtube.png" tooltip="YouTube" press="onYouTubePress" />
+                </HBox>
+            </VBox>
+
+
+        </content>
+        <footer>
+            <OverflowToolbar id="_IDGenOverflowToolbar">
+                <ToolbarSpacer id="_IDGenToolbarSpacer" />
+                <Button id="_IDGenButton17"
+                    class="chatusicon"
+                    icon="img/chatus.png" 
+                press="handleMessagePopoverPress"
+                />
+            </OverflowToolbar>
+        </footer>
+    </Page>
+</mvc:View>

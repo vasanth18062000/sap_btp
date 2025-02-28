@@ -1,0 +1,162 @@
+<mvc:View
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns:f="sap.ui.layout.form"
+    controllerName="ns.royalenfield.controller.RERideForm"
+>
+    <Shell id="_IDGenShell2">
+        <Page id="_IDGenPage">
+            <customHeader>
+                <OverflowToolbar id="_IDGenOverflowToolbar1">
+                    <Bar id="_IDGenBar1">
+                        <contentLeft>
+                            <Button press=".onbackToTestRide" text="Back" type="Emphasized"
+                                class="button1" icon="sap-icon://nav-back" />
+                            <Image
+                                id="_IDGenmage1"
+                                src="https://www.royalenfield.com/content/dam/royal-enfield/india/logos/logo.svg"
+                                width="70%"
+                                height="90%"
+                            />
+                        </contentLeft>
+
+                        <contentMiddle>
+                            <Text
+                                id="_IDGenTxt1"
+                                text="{i18n>bookATestRide}" class="customHeaderTitle"
+                            />
+                        </contentMiddle>
+                        <contentRight>
+                            <Image id="_IDGenImage2" src="{i18n>LaderaLogo}" width="100%"
+                                height="300%" />
+                        </contentRight>
+                    </Bar>
+                </OverflowToolbar>
+            </customHeader>
+            <content>
+                <VBox
+                    id="_IDGenVBox6"
+                    justifyContent="Center"
+                    alignItems="Center"
+                    width="100%"
+                >
+                </VBox>
+                <VBox >
+                    <HBox>
+                        <Table id="bikeTable" >
+                            <headerToolbar>
+                                <Toolbar>
+                                    <Title class="bikedescripinform" text="{bikeModel>/title} Details" level="H2" />
+                                </Toolbar>
+                            </headerToolbar>
+                            <columns>
+                                <!-- <Column>
+                                    <Text text="Title" />
+                                </Column> -->
+                                <Column>
+                                    <Text text="{i18n>rideEngine}" />
+                                </Column>
+                                <Column>
+                                    <Text text="{i18n>ridePrice}" />
+                                </Column>
+                                <Column>
+                                    <Text text="{i18n>rideColors}" />
+                                </Column>
+                            </columns>
+                            <items>
+                                <ColumnListItem>
+                                    <cells>
+                                        <!-- <Text text="{bikeModel>/title}" /> -->
+                                        <Text text="{bikeModel>/engine}" />
+                                        <Text text="{bikeModel>/price}" />
+                                        <Text text="{= ${bikeModel>/colors}.join(', ') }" />
+                                    </cells>
+                                </ColumnListItem>
+                            </items>
+                        </Table>
+                    </HBox>
+                </VBox>
+                <!-- <VBox >
+                <HBox >
+                <Image class="bike"
+                src="https://www.royalenfield.com/content/dam/royal-enfield/motorcycles/bear-650/book-a-test-ride/bear-650-800x710.png">
+                </Image>
+            </HBox>
+                </VBox> -->
+                <f:SimpleForm id="_IDGenSimpleForm"
+                    xmlns:layout="sap.ui.layout"
+                    layout="ResponsiveGridLayout"
+                    labelSpanL="4"
+                    labelSpanM="4"
+                    labelSpanS="12"
+                    adjustLabelSpan="false"
+                    columnsL="2"
+                    columnsM="2"
+                    width="100%"
+                    
+                >
+                    <HBox id="_IDGenHBox">
+                        <Text id="_IDGenText11" text="{/textda}" class="customHeaderBikeRide"></Text>
+
+                        <Image id="_IDGenImage"
+                            class="bike"
+                            src="{/dynamicImageSrc}"
+                            tooltip="Bear 650 Image"
+                        />
+
+                        <VBox id="_IDGenVBox" class="bikeForm">
+                         <Text
+                        id="_IDGenx2t1"
+                        text="{i18n>contactDetails}"
+                        textAlign="Center"
+                        class="titleText"
+                    />
+                            <HBox id="_IDGenHBox1" class="Field">
+                                <Label id="_IDGenLabel"
+                                    text="{i18n>firstName}"
+                                    required="true"
+                                    class="label1"
+                                />
+                                <Label id="_IDGenLabel1" text="{i18n>lastName}" class="testLastForm"/>
+                            </HBox>
+                            <HBox id="_IDGenHBox2" class="labelField">
+                                <Input id="firstName" change="onFirstNameChange"
+                                    showClearIcon="true" />
+                                <Input id="lastName" showClearIcon="true" class="testLastForm" />
+                            </HBox>
+                            <Label id="_IDGenLabel2"
+                                text="{i18n>emailId}"
+                                required="true"
+                            />
+                            <HBox id="_IDGenHBox3" class="labelField">
+                                <Input id="email" change="onEmailChange" />
+                            </HBox>
+                            <Label id="_IDGenLabel3"
+                                text="{i18n>pincode}"
+                                required="true"
+                            />
+                            <HBox id="_IDGenHBox4" class="labelField">
+                                <Input id="pincode" />
+                            </HBox>
+                            <Label id="_IDGenLabel4"
+                                text="{i18n>MobileNumber}"
+                                required="true"
+                            />
+                            <HBox id="_IDGenHBox5" class="labelField">
+                                <Input
+                                    id="mobileNumber"
+                                    change="onMobileNumberChange"
+                                />
+                            </HBox>
+                            <Button id="_IDGenButton1" text="{i18n>bookYourRide}" press="onSave"
+                                type="Success" icon="sap-icon://accept" />
+                        </VBox>
+                    </HBox>
+                </f:SimpleForm>
+                
+
+            </content>
+        </Page>
+    </Shell>
+</mvc:View>

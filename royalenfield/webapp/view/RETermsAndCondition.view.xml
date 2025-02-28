@@ -1,0 +1,72 @@
+<mvc:View controllerName="ns.royalenfield.controller.RETermsAndCondition"
+    xmlns:mvc="sap.ui.core.mvc" 
+    xmlns="sap.m" 
+    
+    xmlns:form="sap.ui.layout.form" 
+    xmlns:core="sap.ui.core" 
+    displayBlock="true">
+
+    <Page title="Terms and Conditions" >
+
+    <customHeader>
+            <OverflowToolbar id="_IDGenOverflowToolbar1">
+                <Bar id="_IDGenBar1">
+                    <contentLeft>
+                        <!-- <Image
+                            src="img/back1.png"
+                            alt="Back"
+                            width="70px"
+                            height="90px"
+                            press=".onbackToRoyal"
+                        /> -->
+<Button press=".onNavBack" text="Back" type="Emphasized" class="button1" icon="sap-icon://nav-back"/>
+
+
+                        <!-- <Button text="Back" press=".onbackToRoyal"
+                        class="customBackButton" /> -->
+                        <Image id="_IDGenImage1" src="{i18n>RELogo}" width="80%" height="100%" />
+                    </contentLeft>
+
+                    <contentRight>
+                        <Image id="_IDGenImage2" src="{i18n>LaderaLogo}" width="100%" height="400%" />
+                    </contentRight>
+                </Bar>
+            </OverflowToolbar>
+        </customHeader>
+        <ScrollContainer width="100%" height="100%" vertical="true">
+            <VBox class="termsBox" width="100%" alignItems="Start">
+                <!-- Header -->
+                <Title text="Terms &amp; Conditions" level="H1" class="headerText" />
+
+                <!-- Section Header -->
+                <Title text="Site Contents" level="H2" class="sectionHeader" />
+                <Text text="Occasionally there may be information on this website that contains typographical errors, inaccuracies, or omissions that may relate to product descriptions, pricing, and availability. We reserve the right to correct any errors, inaccuracies or omissions and to change or update information at any time without prior notice. We apologize for any inconvenience this may cause." />
+
+                <!-- Section Header -->
+                <Title text="User Comments, Feedback, Postcards and Other Submissions" level="H2" class="sectionHeader" />
+                <Text text="All comments, feedback, postcards, suggestions, ideas, and other submissions disclosed, submitted or offered to Royal Enfield on or by this Site or otherwise disclosed, submitted or offered in connection with your use of this Site (collectively, the 'Comments') shall be and remain Royal Enfield's property. Such disclosure, submission or offer of any Comments shall constitute an assignment to Royal Enfield of all worldwide rights, titles and interests in all copyrights and other intellectual properties in the Comments." />
+
+                <!-- Section Header -->
+                <Title text="Colors" level="H2" class="sectionHeader" />
+                <Text text="We have made every effort to display as accurately as possible the colors of our products that appear at the Site. However, as the actual colors you see will depend on your monitor, we cannot guarantee that your monitor's display of any color will be accurate." />
+
+                <!-- Section Header -->
+                <Title text="Disclaimer" level="H2" class="sectionHeader" />
+                <Text text="Royal Enfield provides the materials on this site 'as is' without warranties of any kind, either express or implied, including without limitation, warranties of title, implied warranties of merchantability, fitness for a particular purpose or non-infringement of intellectual property." />
+
+                <!-- Section Header -->
+                <Title text="Indemnification" level="H2" class="sectionHeader" />
+                <Text text="You agree to defend, indemnify and hold Royal Enfield harmless from and against any and all claims, damages, costs and expenses, including attorneys' fees, arising from or related to your use of the Site." />
+
+                <!-- Section Header -->
+                <Title text="Miscellaneous" level="H2" class="sectionHeader" />
+                <Text text="Unless otherwise specified, this Site and the Contents thereof are displayed solely for the purpose of promoting Royal Enfield's products and services. This Site is controlled and operated by Royal Enfield from its office in Chennai, India." />
+
+                <!-- Footer Section -->
+                <Title text="Termination" level="H2" class="sectionHeader" />
+                <Text text="These terms are effective unless and until terminated by either you or Royal Enfield. You may terminate this Agreement at any time. Royal Enfield also may terminate this Agreement at any time and may do so immediately without notice." />
+        
+            </VBox>
+        </ScrollContainer>
+    </Page>
+</mvc:View>

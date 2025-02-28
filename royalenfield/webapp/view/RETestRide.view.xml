@@ -1,0 +1,332 @@
+<mvc:View controllerName="ns.royalenfield.controller.RETestRide"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns="sap.m"
+    xmlns:layout="sap.ui.layout"
+>
+    <Shell id="_IDGenShell">
+        <Page
+            id="page1"
+            title="BOOK A TEST RIDE"
+        >
+            <customHeader>
+                <OverflowToolbar id="_IDGenOverflowoolbar1">
+                    <Bar id="_IDGenar1">
+                        <contentLeft>
+                            <Button press=".onbackRoyalEnfield" text="Back" type="Emphasized"
+                                class="button1" icon="sap-icon://nav-back" />
+                            <Image
+                                id="_IDGenmage1"
+                                src="https://www.royalenfield.com/content/dam/royal-enfield/india/logos/logo.svg"
+                                width="70%"
+                                height="90%"
+                            />
+                        </contentLeft>
+
+                        <contentMiddle>
+                            <Text
+                                id="_IDGenTxt1"
+                                text="{i18n>bookATestRide}" class="customHeaderTitle"
+                            />
+                        </contentMiddle>
+                         <contentRight>
+                        <Image id="_IDGenImae2" src="{i18n>LaderaLogo}" width="100%" height="300%" />
+                    </contentRight>
+                    </Bar>
+                </OverflowToolbar>
+            </customHeader>
+            <content>
+                <VBox id="_IDGenVBox6"
+                    justifyContent="Center"
+                    alignItems="Center"
+                    width="100%"
+                >
+                    <Text
+                        id="_IDGenxt1"
+                        text="{i18n>SelectYourModel}"
+                        textAlign="Center"
+                        class="titleText"
+                    />
+                </VBox>
+
+                <layout:Grid
+                    id="tileGrid"
+                    width="100%"
+                    defaultSpan="L3 M3 S6"
+                    hSpacing="2"
+                    vSpacing="2"
+                >
+                    <GenericTile
+                        id="_IDGenGenedriTile1"
+                        class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout customTile"
+                        width="auto"
+                        press=".onNavBike1Fragment"
+                        header="Bear 650"
+                    >
+                        <tileContent>
+                            <TileContent id="_IDGenTeilContent1">
+                                <content>
+                                    <Image
+                                        alt="Bear 650"
+                                        id="_IDGnImae1"
+                                        class="customImage"
+                                        width="100%"
+                                        height="200%"
+                                        src="https://www.royalenfield.com/content/dam/royal-enfield/motorcycles/bear-650/book-a-test-ride/bear-650-300x210.png"
+                                    />
+                                </content>
+                            </TileContent>
+                        </tileContent>
+                    </GenericTile>
+                    <GenericTile
+                        id="_IDGenGenedricTie3"
+                        class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout customTile"
+                        width="auto"
+                        press=".onNavBike2Fragment"
+                        header="Classic 350"
+                    >
+                        <tileContent>
+                            <TileContent id="_IDGenTeileContent3">
+                                <content>
+                                    <Image
+                                        alt="Classic 350"
+                                        id="_IDGnImage3"
+                                        class="customImage"
+                                        width="100%"
+                                        height="200%"
+                                        src="https://www.royalenfield.com/content/dam/royal-enfield/motorcycles/new-classic-350/book-a-test-ride/book-a-test-ride-300x210.png"
+                                    />
+                                </content>
+                            </TileContent>
+                        </tileContent>
+                    </GenericTile>
+                    <GenericTile
+                        id="_IDGenGenedricTile4"
+                        class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout customTile"
+                        width="auto"
+                        press=".onNavBike3Fragment"
+                        header="Guerrilla 450
+
+"
+                    >
+                        <tileContent>
+                            <TileContent id="_IDGenTeileContent4">
+                                <content>
+                                    <Image
+                                        alt="Guerrilla 450"
+                                        id="_IDGnImag4"
+                                        class="customImage"
+                                        width="100%"
+                                        height="200%"
+                                        src="https://www.royalenfield.com/content/dam/royal-enfield/motorcycles/guerrilla-450/guerrilla-450-300x210.jpg"
+                                    />
+                                </content>
+                            </TileContent>
+                        </tileContent>
+                    </GenericTile>
+                    <GenericTile
+                        id="_IDGenGenedricTile5"
+                        class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout customTile"
+                        width="auto"
+                        press=".onNavBike4Fragment"
+                        header="Hunter 350"
+                    >
+                        <tileContent>
+                            <TileContent id="_IDGenTeileContent5">
+                                <content>
+                                    <Image
+                                        alt="Hunter 350"
+                                        id="_IDGnImage5"
+                                        class="customImage"
+                                        width="100%"
+                                        height="200%"
+                                        src="https://www.royalenfield.com/content/dam/royal-enfield/shotgun-650/book-a-test-ride/book-a-test-ride-300x210.png"
+                                    />
+                                </content>
+                            </TileContent>
+                        </tileContent>
+                    </GenericTile>
+                    <GenericTile
+                        id="_IDGenGenedricTile6"
+                        class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout customTile"
+                        width="auto"
+                        press=".onNavBike5Fragment"
+                        header="Scram 411"
+                    >
+                        <tileContent>
+                            <TileContent id="_IDGenTeileContent6">
+                                <content>
+                                    <Image
+                                        alt="Scram 411"
+                                        id="_IDGnImage1"
+                                        class="customImage"
+                                        width="100%"
+                                        height="200%"
+                                        src="https://www.royalenfield.com/content/dam/royal-enfield/india/motorcycles/book-a-test-ride/ga-book-test-ride/thumbnail/royal-enfield-scram-11-300x210.png"
+                                    />
+                                </content>
+                            </TileContent>
+                        </tileContent>
+                    </GenericTile>
+                    <GenericTile
+                        id="_IDGenGenedricTile7"
+                        class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout customTile"
+                        width="auto"
+                        press=".onNavBike6Fragment"
+                        header="Meteor 350"
+                    >
+                        <tileContent>
+                            <TileContent id="_IDGenTeileContent7">
+                                <content>
+                                    <Image
+                                        alt="Meteor 350"
+                                        id="_IDGnImage7"
+                                        class="customImage"
+                                        width="100%"
+                                        height="200%"
+                                        src="https://www.royalenfield.com/content/dam/royal-enfield/motorcycles/meteor-350/thumbnail/meteor-300x210.png"
+                                    />
+                                </content>
+                            </TileContent>
+                        </tileContent>
+                    </GenericTile>
+                    <GenericTile
+                        id="_IDGenGenedricTile8"
+                        class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout customTile"
+                        width="auto"
+                        press=".onNavBike7Fragment"
+                        header="Interceptor 650"
+                    >
+                        <tileContent>
+                            <TileContent id="_IDGenTeileContent8">
+                                <content>
+                                    <Image
+                                        alt="Interceptor 650"
+                                        id="_IDGnImage8"
+                                        class="customImage"
+                                        width="100%"
+                                        height="200%"
+                                        src="https://www.royalenfield.com/content/dam/royal-enfield/india/motorcycles/interceptor/new/interceptor-book-a-test-ride-300x210.png"
+                                    />
+                                </content>
+                            </TileContent>
+                        </tileContent>
+                    </GenericTile>
+                    <GenericTile
+                        id="_IDGenGenedricTile9"
+                        class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout customTile"
+                        width="auto"
+                        press=".onNavBike8Fragment"
+                        header="Continental GT 650"
+                    >
+                        <tileContent>
+                            <TileContent id="_IDGenTeileContent9">
+                                <content>
+                                    <Image
+                                        alt="Continental GT 650"
+                                        id="_IDGnImage9"
+                                        class="customImage"
+                                        width="100%"
+                                        height="200%"
+                                        src="https://www.royalenfield.com/content/dam/royal-enfield/india/motorcycles/continental-gt/new/continental-gt-book-a-test-ride-300x210.png"
+                                    />
+                                </content>
+                            </TileContent>
+                        </tileContent>
+                    </GenericTile>
+
+                    <GenericTile
+                        id="_IDGenGenedricTile10"
+                        class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout customTile"
+                        width="auto"
+                        press=".onNavBike9Fragment"
+                        header="Shotgun 650"
+                    >
+                        <tileContent>
+                            <TileContent id="_IDGenTeileContent10">
+                                <content>
+                                    <Image
+                                        alt="Shotgun 650"
+                                        id="_IDGnImage10"
+                                        class="customImage"
+                                        width="100%"
+                                        height="200%"
+                                        src="https://www.royalenfield.com/content/dam/royal-enfield/shotgun-650/book-a-test-ride/book-a-test-ride-300x210.png"
+                                    />
+                                </content>
+                            </TileContent>
+                        </tileContent>
+                    </GenericTile>
+
+                    <GenericTile
+                        id="_IDGenGenedricTile11"
+                        class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout customTile"
+                        width="auto"
+                        press=".onNavBike10Fragment"
+                        header="Himalayan"
+                    >
+                        <tileContent>
+                            <TileContent id="_IDGenTeileContent11">
+                                <content>
+                                    <Image
+                                        alt="Himalayan"
+                                        id="_IDGnImage11"
+                                        class="customImage"
+                                        width="100%"
+                                        height="200%"
+                                        src="https://www.royalenfield.com/content/dam/royal-enfield/motorcycles/himalayan/new-himalayan-300x210.jpg"
+                                    />
+                                </content>
+                            </TileContent>
+                        </tileContent>
+                    </GenericTile>
+
+                    <GenericTile
+                        id="_IDGenGenedricTile12"
+                        class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout customTile"
+                        width="auto"
+                        press=".onNavBike11Fragment"
+                        header="Bullet 350"
+                    >
+                        <tileContent>
+                            <TileContent id="_IDGenTeileContent12">
+                                <content>
+                                    <Image
+                                        alt="Bullet 350"
+                                        id="_IDGnImage12"
+                                        class="customImage"
+                                        width="100%"
+                                        height="200%"
+                                        src="https://www.royalenfield.com/content/dam/royal-enfield/bullet/bullet-350-300x210.png"
+                                    />
+                                </content>
+                            </TileContent>
+                        </tileContent>
+                    </GenericTile>
+                    <GenericTile
+                        id="_IDGenGenedricTile13"
+                        class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout customTile"
+                        width="auto"
+                        press=".onNavBike12Fragment"
+                        header="Super Meteor 650"
+                    >
+                        <tileContent>
+                            <TileContent id="_IDGenTeileContent13">
+                                <content>
+                                    <Image
+                                        alt="Super Meteor 650"
+                                        id="_IDGnImage13"
+                                        class="customImage"
+                                        width="100%"
+                                        height="200%"
+                                        src="https://www.royalenfield.com/content/dam/royal-enfield/super-meteor-650/motorcycles/forms/book-test-ride-300x210.png"
+                                    />
+                                </content>
+                            </TileContent>
+                        </tileContent>
+                    </GenericTile>
+                </layout:Grid>
+            </content>
+        </Page>
+    </Shell>
+</mvc:View>
