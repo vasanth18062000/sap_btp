@@ -1,0 +1,161 @@
+@server = http://localhost:4004
+@auth = Authorization: Basic alice:
+
+
+### SalesOrderCombined
+# @name SalesOrderCombined_GET
+GET {{server}}/odata/v4/sales/SalesOrderCombined
+{{auth}}
+
+
+### SalesOrderCombined
+# @name SalesOrderCombined_POST
+POST {{server}}/odata/v4/sales/SalesOrderCombined
+Content-Type: application/json
+{{auth}}
+
+{
+  "headerID": "23444394-6149-426d-9302-a47ed8468495",
+  "orderId": "d-23444394",
+  "customerName": "customerName-23444394",
+  "status": "status-23444394",
+  "itemID": "23444394-dada-4187-ad2c-20ce6265f6f5",
+  "itemNo": 13,
+  "material": "material-23444394",
+  "quantity": 55
+}
+
+
+### SalesOrderCombined
+# @name SalesOrderCombined_PATCH
+PATCH {{server}}/odata/v4/sales/SalesOrderCombined/23444394-6149-426d-9302-a47ed8468495
+Content-Type: application/json
+{{auth}}
+
+{
+  "headerID": "23444394-6149-426d-9302-a47ed8468495",
+  "orderId": "d-23444394",
+  "customerName": "customerName-23444394",
+  "status": "status-23444394",
+  "itemID": "23444394-dada-4187-ad2c-20ce6265f6f5",
+  "itemNo": 13,
+  "material": "material-23444394",
+  "quantity": 55
+}
+
+
+### SalesOrderCombined
+# @name SalesOrderCombined_DELETE
+DELETE {{server}}/odata/v4/sales/SalesOrderCombined/23444394-6149-426d-9302-a47ed8468495
+Content-Type: application/json
+{{auth}}
+
+
+### SalesOrderHeader
+# @name SalesOrderHeader_GET
+GET {{server}}/odata/v4/sales/SalesOrderHeader
+{{auth}}
+
+
+### SalesOrderHeader
+# @name SalesOrderHeader_POST
+POST {{server}}/odata/v4/sales/SalesOrderHeader
+Content-Type: application/json
+{{auth}}
+
+{
+  "ID": "4214678e-1262-432d-84d9-289f0b4c2595",
+  "orderId": "Id-4214678",
+  "customerName": "customerName-4214678",
+  "status": "status-4214678",
+  "items": [
+    {
+      "ID": "12069494-b00a-42e7-aa7e-399b2784820d",
+      "itemNo": 57,
+      "material": "material-12069494",
+      "quantity": 24
+    },
+    {
+      "ID": "12069495-526e-4aa6-9c44-b913f5220ae7",
+      "itemNo": 26,
+      "material": "material-12069495",
+      "quantity": 2
+    }
+  ]
+}
+
+
+### SalesOrderHeader
+# @name SalesOrderHeader_PATCH
+PATCH {{server}}/odata/v4/sales/SalesOrderHeader/4214678e-1262-432d-84d9-289f0b4c2595
+Content-Type: application/json
+{{auth}}
+
+{
+  "ID": "4214678e-1262-432d-84d9-289f0b4c2595",
+  "orderId": "Id-4214678",
+  "customerName": "customerName-4214678",
+  "status": "status-4214678",
+  "items": [
+    {
+      "ID": "12069494-b00a-42e7-aa7e-399b2784820d",
+      "itemNo": 57,
+      "material": "material-12069494",
+      "quantity": 24
+    },
+    {
+      "ID": "12069495-526e-4aa6-9c44-b913f5220ae7",
+      "itemNo": 26,
+      "material": "material-12069495",
+      "quantity": 2
+    }
+  ]
+}
+
+
+### SalesOrderHeader
+# @name SalesOrderHeader_DELETE
+DELETE {{server}}/odata/v4/sales/SalesOrderHeader/4214678e-1262-432d-84d9-289f0b4c2595
+Content-Type: application/json
+{{auth}}
+
+
+### SalesOrderItem
+# @name SalesOrderItem_GET
+GET {{server}}/odata/v4/sales/SalesOrderItem
+{{auth}}
+
+
+### SalesOrderItem
+# @name SalesOrderItem_POST
+POST {{server}}/odata/v4/sales/SalesOrderItem
+Content-Type: application/json
+{{auth}}
+
+{
+  "ID": "12069494-b00a-42e7-aa7e-399b2784820d",
+  "itemNo": 57,
+  "material": "material-12069494",
+  "quantity": 24
+}
+
+
+### SalesOrderItem
+# @name SalesOrderItem_PATCH
+PATCH {{server}}/odata/v4/sales/SalesOrderItem/12069494-b00a-42e7-aa7e-399b2784820d
+Content-Type: application/json
+{{auth}}
+
+{
+  "ID": "12069494-b00a-42e7-aa7e-399b2784820d",
+  "itemNo": 57,
+  "material": "material-12069494",
+  "quantity": 24
+}
+
+
+### SalesOrderItem
+# @name SalesOrderItem_DELETE
+DELETE {{server}}/odata/v4/sales/SalesOrderItem/12069494-b00a-42e7-aa7e-399b2784820d
+Content-Type: application/json
+{{auth}}
