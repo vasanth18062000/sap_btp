@@ -1,0 +1,24 @@
+actvt_ID,actvt_Name,actvt_Code
+6a0b16fa-2501-47a0-99a2-181373b93d9f,Add or Create,01
+f7e95a88-4cc7-4e3e-bd35-9ecb9c2a45cc,Change,02
+8f25d4b5-2d62-4de5-bb08-423c1098c11c,Display,03
+a76dd755-05a4-49a0-9850-b69d693f4565,Print, edit messages,04
+43c1843c-40f4-4d03-9ad7-40288d1c1963,Lock,05
+3d54e2a2-e0fc-46fa-b58a-f9ebf4f02f0a,Delete,06
+66b34cb1-537a-4ec6-9db0-233843fc3d61,Activate, generate,07
+3483080c-7907-4721-8a95-f1cf8c3600e9,Display change documents,08
+3a7abac7-b9f8-419e-9e9e-3506a8ef9b84,Display prices,09
+170f0530-91ad-4653-a22c-4eb7a34e95c1,Check Documents for Process,0A
+54d56f86-5371-4a33-b3de-3b9a8c8c8f4a,Status Change in Substitute,0B
+8e3de157-8108-42e3-b27b-6d20ffb0c0dc,Post,10
+1bd76e28-cab7-4d36-a8b2-e9c60b84a1cb,Change number range status,11
+f360ba92-268c-4a0a-8802-4a9a92fe24f5,Maint.and gen.change document,12
+6cbac010-74cd-4ae5-a231-2cd99debe774,Initialize number levels,13
+06b5895a-0ec5-43b1-93d3-c7dbce351e2d,Field select.:Generate screen,14
+97337f4b-57de-499f-bf3c-34e531cf44e3,Field select.:Assign table,15
+55f8817d-ec52-49d1-94fc-70593386c9f5,Execute,16
+44bb489f-23a6-45db-a6c2-739c39ab9d30,Maintain number range object,17
+708e033f-1763-4d62-a779-e2e109b4f527,Deliveries from coll. proc.,18
+d7fc8403-44ed-4c1e-a262-6580538b8f7f,Invoices from coll. proc,19
+a4a1cbe4-72ec-4f24-964f-130f9a88ebd1,Transport without translation,20
+

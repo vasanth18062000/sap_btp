@@ -1,0 +1,25 @@
+{
+  "name": "Fue",
+  "version": "1.0.0",
+  "description": "A simple CAP project.",
+  "repository": "<Add your repository here>",
+  "license": "UNLICENSED",
+  "private": true,
+  "dependencies": {
+    "@sap/cds": "^9",
+    "@sap/cds-odata-v2-adapter-proxy": "^1.9.21",
+    "exceljs": "^4.4.0",
+    "express": "^4"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "devDependencies": {
+    "@cap-js/cds-types": "^0.11.0",
+    "@cap-js/sqlite": "^2"
+  },
+  "scripts": {
+    "start": "cds-serve",
+    "watch-fue": "cds watch --open fue/webapp/index.html?sap-ui-xx-viewCache=false"
+  }
+}

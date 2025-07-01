@@ -1,0 +1,130 @@
+{
+  "_version": "1.65.0",
+  "sap.app": {
+    "id": "fue.fue",
+    "type": "application",
+    "i18n": "i18n/i18n.properties",
+    "applicationVersion": {
+      "version": "0.0.1"
+    },
+    "title": "{{appTitle}}",
+    "description": "{{appDescription}}",
+    "resources": "resources.json",
+    "sourceTemplate": {
+      "id": "@sap/generator-fiori:basic",
+      "version": "1.18.1",
+      "toolsId": "9393bda4-510f-4f37-bbe6-3cd738ad881e"
+    },
+    "dataSources": {
+      "mainService": {
+        "uri": "/v2/odata/v4/csvextraction/",
+        "type": "OData",
+        "settings": {
+          "annotations": [],
+          "odataVersion": "2.0"
+        }
+      }
+    },
+    "crossNavigation": {
+      "inbounds": {
+        "fue-fue": {
+          "semanticObject": "fue",
+          "action": "fue",
+          "title": "{{fue-fue.flpTitle}}",
+          "signature": {
+            "parameters": {},
+            "additionalParameters": "allowed"
+          }
+        }
+      }
+    }
+  },
+  "sap.ui": {
+    "technology": "UI5",
+    "icons": {
+      "icon": "",
+      "favIcon": "",
+      "phone": "",
+      "phone@2": "",
+      "tablet": "",
+      "tablet@2": ""
+    },
+    "deviceTypes": {
+      "desktop": true,
+      "tablet": true,
+      "phone": true
+    }
+  },
+  "sap.ui5": {
+    "flexEnabled": true,
+    "dependencies": {
+      "minUI5Version": "1.136.2",
+      "libs": {
+        "sap.m": {},
+        "sap.ui.core": {}
+      }
+    },
+    "contentDensities": {
+      "compact": true,
+      "cozy": true
+    },
+    "models": {
+      "i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "settings": {
+          "bundleName": "fue.fue.i18n.i18n"
+        }
+      },
+      "": {
+        "dataSource": "mainService",
+        "preload": true,
+        "settings": {
+          "operationMode": "Server",
+          "autoExpandSelect": true,
+          "earlyRequests": true
+        }
+      }
+    },
+    "resources": {
+      "css": [
+        {
+          "uri": "css/style.css"
+        }
+      ]
+    },
+    "routing": {
+      "config": {
+        "routerClass": "sap.m.routing.Router",
+        "controlAggregation": "pages",
+        "controlId": "app",
+        "transition": "slide",
+        "type": "View",
+        "viewType": "XML",
+        "path": "fue.fue.view",
+        "async": true,
+        "viewPath": "fue.fue.view"
+      },
+      "routes": [
+        {
+          "name": "RouteFueCalculation",
+          "pattern": ":?query:",
+          "target": [
+            "TargetFueCalculation"
+          ]
+        }
+      ],
+      "targets": {
+        "TargetFueCalculation": {
+          "id": "FueCalculation",
+          "name": "FueCalculation"
+        }
+      }
+    },
+    "rootView": {
+      "viewName": "fue.fue.view.App",
+      "type": "XML",
+      "id": "App",
+      "async": true
+    }
+  }
+}
